@@ -11,6 +11,9 @@ import UIKit
 
 class HomeView: BaseView<HomePresenterProtocol> {
 
+    @IBOutlet weak var homeCollectionView: UICollectionView!
+    @IBOutlet weak var menu: Menu!
+    
     let screenName = "Home"
     
     override func viewDidLoad() {
