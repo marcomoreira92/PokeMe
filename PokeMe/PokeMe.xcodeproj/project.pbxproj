@@ -46,6 +46,16 @@
 		6D4171F325D6BB0000D2B8B2 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4171D525D6BB0000D2B8B2 /* BasePresenter.swift */; };
 		6D4171F425D6BB0000D2B8B2 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4171D625D6BB0000D2B8B2 /* BaseRouter.swift */; };
 		6D4171F525D6BB0000D2B8B2 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4171D725D6BB0000D2B8B2 /* BaseView.swift */; };
+		6D41721225D6BD4A00D2B8B2 /* HomeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D41720625D6BD4A00D2B8B2 /* HomeDTO.swift */; };
+		6D41721325D6BD4A00D2B8B2 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D41720825D6BD4A00D2B8B2 /* HomeView.xib */; };
+		6D41721425D6BD4A00D2B8B2 /* HomeView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D41720925D6BD4A00D2B8B2 /* HomeView_iPad.xib */; };
+		6D41721525D6BD4A00D2B8B2 /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D41720A25D6BD4A00D2B8B2 /* HomeAssembly.swift */; };
+		6D41721625D6BD4A00D2B8B2 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D41720B25D6BD4A00D2B8B2 /* HomeInteractor.swift */; };
+		6D41721725D6BD4A00D2B8B2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D41720C25D6BD4A00D2B8B2 /* HomeView.swift */; };
+		6D41721825D6BD4A00D2B8B2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D41720E25D6BD4A00D2B8B2 /* HomeViewModel.swift */; };
+		6D41721925D6BD4A00D2B8B2 /* HomeInteractorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D41720F25D6BD4A00D2B8B2 /* HomeInteractorModel.swift */; };
+		6D41721A25D6BD4A00D2B8B2 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D41721025D6BD4A00D2B8B2 /* HomeRouter.swift */; };
+		6D41721B25D6BD4A00D2B8B2 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D41721125D6BD4A00D2B8B2 /* HomePresenter.swift */; };
 		C97B1B88D54696A3A5DE742B /* Pods_PokeMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B013933F68461F9B775B08 /* Pods_PokeMe.framework */; };
 		D2E7CC862F86867AF26B66E4 /* Pods_PokeMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD725B1E2C48848481C47315 /* Pods_PokeMeTests.framework */; };
 /* End PBXBuildFile section */
@@ -115,6 +125,16 @@
 		6D4171D525D6BB0000D2B8B2 /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		6D4171D625D6BB0000D2B8B2 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		6D4171D725D6BB0000D2B8B2 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		6D41720625D6BD4A00D2B8B2 /* HomeDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDTO.swift; sourceTree = "<group>"; };
+		6D41720825D6BD4A00D2B8B2 /* HomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
+		6D41720925D6BD4A00D2B8B2 /* HomeView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeView_iPad.xib; sourceTree = "<group>"; };
+		6D41720A25D6BD4A00D2B8B2 /* HomeAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAssembly.swift; sourceTree = "<group>"; };
+		6D41720B25D6BD4A00D2B8B2 /* HomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		6D41720C25D6BD4A00D2B8B2 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		6D41720E25D6BD4A00D2B8B2 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		6D41720F25D6BD4A00D2B8B2 /* HomeInteractorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInteractorModel.swift; sourceTree = "<group>"; };
+		6D41721025D6BD4A00D2B8B2 /* HomeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		6D41721125D6BD4A00D2B8B2 /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		8018A9AEC731A9DB073C59BC /* Pods-PokeMe-PokeMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeMe-PokeMeUITests.release.xcconfig"; path = "Target Support Files/Pods-PokeMe-PokeMeUITests/Pods-PokeMe-PokeMeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		932B6F45818559491D85D7BC /* Pods-PokeMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeMeTests.release.xcconfig"; path = "Target Support Files/Pods-PokeMeTests/Pods-PokeMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		9A1384BAE556D06327E3F880 /* Pods-PokeMe-PokeMeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeMe-PokeMeUITests.debug.xcconfig"; path = "Target Support Files/Pods-PokeMe-PokeMeUITests/Pods-PokeMe-PokeMeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -300,8 +320,50 @@
 		6D4171D825D6BB0000D2B8B2 /* VIPER */ = {
 			isa = PBXGroup;
 			children = (
+				6D41720425D6BD4A00D2B8B2 /* Home */,
 			);
 			path = VIPER;
+			sourceTree = "<group>";
+		};
+		6D41720425D6BD4A00D2B8B2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				6D41720525D6BD4A00D2B8B2 /* DTO */,
+				6D41720725D6BD4A00D2B8B2 /* XIB */,
+				6D41720D25D6BD4A00D2B8B2 /* Models */,
+				6D41720A25D6BD4A00D2B8B2 /* HomeAssembly.swift */,
+				6D41720B25D6BD4A00D2B8B2 /* HomeInteractor.swift */,
+				6D41720C25D6BD4A00D2B8B2 /* HomeView.swift */,
+				6D41721025D6BD4A00D2B8B2 /* HomeRouter.swift */,
+				6D41721125D6BD4A00D2B8B2 /* HomePresenter.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		6D41720525D6BD4A00D2B8B2 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				6D41720625D6BD4A00D2B8B2 /* HomeDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		6D41720725D6BD4A00D2B8B2 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				6D41720825D6BD4A00D2B8B2 /* HomeView.xib */,
+				6D41720925D6BD4A00D2B8B2 /* HomeView_iPad.xib */,
+			);
+			path = XIB;
+			sourceTree = "<group>";
+		};
+		6D41720D25D6BD4A00D2B8B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6D41720E25D6BD4A00D2B8B2 /* HomeViewModel.swift */,
+				6D41720F25D6BD4A00D2B8B2 /* HomeInteractorModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A9840A4A3792AB1BE538DDE0 /* Frameworks */ = {
@@ -421,6 +483,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D41717425D6B8B500D2B8B2 /* LaunchScreen.storyboard in Resources */,
+				6D41721425D6BD4A00D2B8B2 /* HomeView_iPad.xib in Resources */,
+				6D41721325D6BD4A00D2B8B2 /* HomeView.xib in Resources */,
 				6D41717125D6B8B500D2B8B2 /* Assets.xcassets in Resources */,
 				6D41716C25D6B8B400D2B8B2 /* Main.storyboard in Resources */,
 			);
@@ -525,23 +589,31 @@
 				6D4171E525D6BB0000D2B8B2 /* UIButton+Extension.swift in Sources */,
 				6D4171F425D6BB0000D2B8B2 /* BaseRouter.swift in Sources */,
 				6D4171E125D6BB0000D2B8B2 /* UIImageView+Extension.swift in Sources */,
+				6D41721925D6BD4A00D2B8B2 /* HomeInteractorModel.swift in Sources */,
 				6D4171F525D6BB0000D2B8B2 /* BaseView.swift in Sources */,
 				6D4171DA25D6BB0000D2B8B2 /* BaseCDL.swift in Sources */,
 				6D4171F125D6BB0000D2B8B2 /* BaseInteractor.swift in Sources */,
 				6D4171ED25D6BB0000D2B8B2 /* String+Extension.swift in Sources */,
 				6D4171E425D6BB0000D2B8B2 /* Date+Extension.swift in Sources */,
 				6D4171E825D6BB0000D2B8B2 /* UIImage+Extension.swift in Sources */,
+				6D41721625D6BD4A00D2B8B2 /* HomeInteractor.swift in Sources */,
 				6D4171DB25D6BB0000D2B8B2 /* CommonDataLayerEndPoints.swift in Sources */,
 				6D4171DD25D6BB0000D2B8B2 /* CommonDataLayerBaseModel.swift in Sources */,
 				6D4171DF25D6BB0000D2B8B2 /* PokeMeUtils.swift in Sources */,
+				6D41721825D6BD4A00D2B8B2 /* HomeViewModel.swift in Sources */,
 				6D4171E925D6BB0000D2B8B2 /* UINavigationController+Extension.swift in Sources */,
 				6D4171DE25D6BB0000D2B8B2 /* PokeMeEnums.swift in Sources */,
+				6D41721225D6BD4A00D2B8B2 /* HomeDTO.swift in Sources */,
 				6D4171F325D6BB0000D2B8B2 /* BasePresenter.swift in Sources */,
+				6D41721725D6BD4A00D2B8B2 /* HomeView.swift in Sources */,
 				6D4171EE25D6BB0000D2B8B2 /* NSMutableAttributedString+Extension.swift in Sources */,
 				6D4171E625D6BB0000D2B8B2 /* NSObject+Extension.swift in Sources */,
+				6D41721B25D6BD4A00D2B8B2 /* HomePresenter.swift in Sources */,
 				6D4171EB25D6BB0000D2B8B2 /* Double+Extension.swift in Sources */,
+				6D41721A25D6BD4A00D2B8B2 /* HomeRouter.swift in Sources */,
 				6D4171E725D6BB0000D2B8B2 /* UIView+Extension.swift in Sources */,
 				6D4171E225D6BB0000D2B8B2 /* UIAlertController+Extension.swift in Sources */,
+				6D41721525D6BD4A00D2B8B2 /* HomeAssembly.swift in Sources */,
 				6D41716925D6B8B400D2B8B2 /* ViewController.swift in Sources */,
 				6D41716525D6B8B400D2B8B2 /* AppDelegate.swift in Sources */,
 				6D4171EF25D6BB0000D2B8B2 /* UINavigationBar+Extension.swift in Sources */,
