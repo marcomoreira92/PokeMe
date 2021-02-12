@@ -34,6 +34,9 @@
                             <state key="normal" image="clock.arrow.circlepath" catalog="system">
                                 <color key="titleColor" name="color_secondary"/>
                             </state>
+                            <connections>
+                                <action selector="historyButtonAction:" destination="-1" eventType="touchUpInside" id="fCo-Ag-Df8"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chn-C9-gFt">
                             <rect key="frame" x="165" y="0.0" width="44" height="44"/>
@@ -45,6 +48,9 @@
                             <state key="normal" image="list.bullet" catalog="system">
                                 <color key="titleColor" name="color_secondary"/>
                             </state>
+                            <connections>
+                                <action selector="listButtonAction:" destination="-1" eventType="touchUpInside" id="Xef-yo-vbf"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,6 +74,9 @@
                         <constraint firstAttribute="width" secondItem="tRF-cH-Pnw" secondAttribute="height" multiplier="1:1" id="4Bx-7q-1ba"/>
                     </constraints>
                     <state key="normal" title="Button" image="poke_icon"/>
+                    <connections>
+                        <action selector="pokeBallButtonAction:" destination="-1" eventType="touchUpInside" id="AXp-g7-vM9"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
