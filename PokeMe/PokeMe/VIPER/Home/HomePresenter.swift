@@ -20,10 +20,11 @@ final class HomePresenter: BasePresenter<HomeView, HomeRouterProtocol, HomeInter
     
 
     func homeViewDidLoad() {
-        //TODO
-        self.interactor?.getHomeData(completion: { (_ homeInteractorModel:HomeInteractorModel) -> Void in
-            self.viewModel = HomeViewModel(homeInteractorModel: homeInteractorModel)
-            //TODO: update view
+        
+        self.interactor?.getHomeData(completion: { (_ homeInteractorModel:HomeInteractorModel? , _ error: HomeInteractorErrorModel?) -> Void in
+            //TODO: update view and view model 
+            //self.viewModel = HomeViewModel(homeInteractorModel: homeInteractorModel!)
+
         })
         
     }

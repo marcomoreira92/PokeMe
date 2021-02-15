@@ -49,7 +49,37 @@ class PokeMeTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
         
     }
+    
+    func test_home_interactor_get_pokemon_by_valid_id() throws {
+        let expectation = XCTestExpectation(description: "calls home interactor layer for specific pokemon")
+        let homeInteractor = HomeInteractor()
+        homeInteractor.getPokemonByID(id: "1", completion: {( _ homeModelEntity : HomeInteractorModel?, _ error: HomeInteractorErrorModel?) -> Void in
+            XCTAssert(error == nil)
+            XCTAssert(homeModelEntity != nil)
+            XCTAssert(homeModelEntity?.pokemon != nil, "has no pokemon")
+            XCTAssert(homeModelEntity?.pokemon?.name != nil , "no name was passed")
+            XCTAssert(homeModelEntity?.pokemon?.id != nil , "no id was passed")
+            XCTAssert(homeModelEntity?.pokemon?.height != nil , "no height was passed")
+            XCTAssert(homeModelEntity?.pokemon?.imageURL != nil , "no image was passed")
+            expectation.fulfill()
+        })
+        
+        wait(for: [expectation], timeout: 1)
 
+    }
 
-
+    
+    func test_home_interactor_get_pokemon_by_invalid_id() throws {
+        let expectation = XCTestExpectation(description: "calls home interactor layer for specific pokemon")
+        let homeInteractor = HomeInteractor()
+        homeInteractor.getPokemonByID(id: "-1", completion: {( _homeModelEntity : HomeInteractorModel?, _ error: HomeInteractorErrorModel?) -> Void in
+            XCTAssert(error != nil)
+            XCTAssert(error == HomeInteractorErrorModel.internalError)
+            
+            expectation.fulfill()
+        })
+        
+        wait(for: [expectation], timeout: 1)
+    }
+    
 }
