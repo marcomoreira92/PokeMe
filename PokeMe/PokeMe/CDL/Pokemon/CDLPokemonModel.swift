@@ -14,6 +14,7 @@ class CDLPokemonModel : CommonDataLayerBaseModel, Codable{
     var name : String?
     var height : Int?
     var stats : [CDLStatsModel]?
+    var sprites : CDLspritesModel?
     
     override init() {
         //TODO
@@ -25,6 +26,7 @@ class CDLPokemonModel : CommonDataLayerBaseModel, Codable{
         case name = "name"
         case height = "height"
         case stats = "stats"
+        case sprites = "sprites"
     }
     
 }
@@ -50,5 +52,36 @@ class CDLStatDescriptionModel: CommonDataLayerBaseModel, Codable {
     enum CodingKeys: String, CodingKey {
         case name = "name"
         case url = "url"
+    }
+}
+
+class CDLspritesModel: CommonDataLayerBaseModel, Codable  {
+    var back_default : String?
+    var front_default : String?
+    var other : CDLSpritesOtherModel?
+    
+    //enum to match model properties and JSON names
+    enum CodingKeys: String, CodingKey {
+        case back_default = "back_default"
+        case front_default = "front_default"
+        case other = "other"
+    }
+}
+
+class CDLSpritesOtherModel: CommonDataLayerBaseModel, Codable {
+    var officialartwork : CDLSpritesOtherOfficialartworkModel?
+    
+    //enum to match model properties and JSON names
+    enum CodingKeys: String, CodingKey {
+        case officialartwork = "official-artwork"
+    }
+}
+
+class CDLSpritesOtherOfficialartworkModel: CommonDataLayerBaseModel, Codable {
+    var front_default : String?
+    
+    //enum to match model properties and JSON names
+    enum CodingKeys: String, CodingKey {
+        case front_default = "front_default"
     }
 }

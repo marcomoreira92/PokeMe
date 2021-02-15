@@ -28,6 +28,13 @@ class PokeMeTests: XCTestCase {
                 case .success(let model):
                     if let model = model as? CDLPokemonModel {
                         XCTAssert(model.name == "bulbasaur")
+                        XCTAssert(model.stats?.count != 0)
+                        XCTAssert(model.stats?[0].base_stat != nil)
+                        XCTAssert(model.stats?[0].stat != nil)
+                        XCTAssert(model.stats?[0].stat?.name != nil)
+                        XCTAssert(model.sprites != nil)
+                        XCTAssert(model.sprites?.other != nil)
+                        XCTAssert(model.sprites?.other?.officialartwork != nil)
                     }else{
                         XCTAssert(false, "model is not compatible with CDL pokemon")
                     }
