@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class HomeView: BaseView<HomePresenterProtocol>, UICollectionViewDelegate, UICollectionViewDataSource { //, UICollectionViewDelegateFlowLayout{
+class HomeView: BaseView<HomePresenterProtocol>, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
 
     @IBOutlet weak var homeCollectionView: UICollectionView!
     @IBOutlet weak var menu: Menu!
@@ -29,39 +29,36 @@ class HomeView: BaseView<HomePresenterProtocol>, UICollectionViewDelegate, UICol
         self.homeCollectionView.dataSource = self
         self.homeCollectionView.delegate = self
         self.homeCollectionView.register(cellType: PokemonCollectionViewCell.self)
+    
         
-        
-        if let flowLayout = homeCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        if let collectionViewLayout = homeCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         }
         
     }
     
-    
+    // MARK: collectionview delegate functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let _ = self.presenter?.viewModel{
-            return 1
+            return 1//FIXME
         }
         return 1
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+           return UIEdgeInsets(top: 0, left: 0, bottom: 64, right: 0)
+        }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(with: PokemonCollectionViewCell.self, for: indexPath)
+        cell.setup()
         
-        //TODO: cell.setup()
         return cell
     }
     
-    
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
-    }
-    
-    deinit {
-        //clean all references
-        self.presenter?.cleanup()
     }
     
 }
