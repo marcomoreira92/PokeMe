@@ -10,24 +10,39 @@ import XCTest
 
 class PokeMeTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var pokemonCDL : CDLPokemon!
+    
+    override func setUp(){
+        pokemonCDL = CDLPokemon()
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func test_cdl_pokemon_by_id() throws {
+        let expectation = XCTestExpectation(description: "calls CDL layer for specific pokemon")
+
+        pokemonCDL.getPokemonByID(pokemonID: "1", subscriber: ("CDLtest", { ( response: CDLResponse? ) -> Void in
+            if let response = response {
+                switch response {
+                case .failure(let error):
+                    XCTAssert(false, error.description)
+                    break
+                case .success(let model):
+                    if let model = model as? CDLPokemonModel {
+                        XCTAssert(model.name == "bulbasaur")
+                    }else{
+                        XCTAssert(false, "model is not compatible with CDL pokemon")
+                    }
+                   
+                    break
+                }
+            }else{
+                XCTAssert(false, "no response avaliable")
+            }
+            expectation.fulfill()
+        }))
+        wait(for: [expectation], timeout: 1)
+        
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
 
 }

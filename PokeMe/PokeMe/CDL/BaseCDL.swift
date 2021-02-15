@@ -65,6 +65,18 @@ class BaseCDL {
         case jsonParsingError(Error)
         case invalidURLError
         case invalidParameters
+        
+        var description: String {
+            switch self {
+            case .serverError: return "serverError"
+            case .noDataError: return "noDataError"
+            case .networkError: return "networkError"
+            case .jsonParsingError: return "jsonParsingError"
+            case .invalidURLError: return "invalidURLError"
+            case .invalidParameters: return "invalidParameters"
+
+            }
+        }
     }
 
     enum httpMethod : String{

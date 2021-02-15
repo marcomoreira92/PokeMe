@@ -4,12 +4,11 @@ import Foundation
 /**
  CommonDataLayerEndpointBuilderEnum is a enum that stores and helps to build all endpoint used in the CommonDataLayer.
 
-        let myDummyEndpoint = CommonDataLayerEndpointBuilderEnum.getDummy(ID: "Dummy_ID").endpoint
  */
 enum CommonDataLayerEndpointBuilderEnum{
     
-    //TODO: add all endpoints here
-    case getDummy(ID : String)
+    //Add all endpoints here
+    case getPokemonByID(ID : String)
     
     
     /**
@@ -18,8 +17,8 @@ enum CommonDataLayerEndpointBuilderEnum{
      */
     var endpoint : String{
         switch self {
-        case .getDummy(let ID):
-            return "/point/dummy?=\(ID)"
+        case .getPokemonByID(let ID):
+            return "https://pokeapi.co/api/v2/pokemon/\(ID)"
         default:
             return ""
         }
