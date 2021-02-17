@@ -430,6 +430,7 @@
 				6D41715D25D6B8B400D2B8B2 /* Sources */,
 				6D41715E25D6B8B400D2B8B2 /* Frameworks */,
 				6D41715F25D6B8B400D2B8B2 /* Resources */,
+				3D0F2AF099784D60BD8AA962 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -467,6 +468,7 @@
 				6D41718125D6B8B500D2B8B2 /* Sources */,
 				6D41718225D6B8B500D2B8B2 /* Frameworks */,
 				6D41718325D6B8B500D2B8B2 /* Resources */,
+				A6DEC35DF6F5E92138AFD0D5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -554,6 +556,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3D0F2AF099784D60BD8AA962 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PokeMe/Pods-PokeMe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PokeMe/Pods-PokeMe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PokeMe/Pods-PokeMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		41C061C5F4000FBCE9C94F73 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -574,6 +593,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6DEC35DF6F5E92138AFD0D5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PokeMe-PokeMeUITests/Pods-PokeMe-PokeMeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PokeMe-PokeMeUITests/Pods-PokeMe-PokeMeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PokeMe-PokeMeUITests/Pods-PokeMe-PokeMeUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B7D6FF3FE8FD896DA58C8F46 /* [CP] Check Pods Manifest.lock */ = {

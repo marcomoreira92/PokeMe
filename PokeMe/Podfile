@@ -6,7 +6,8 @@ target 'PokeMe' do
   use_frameworks!
 
   # Pods for PokeMe
-
+  pod 'SDWebImage'
+  
   target 'PokeMeTests' do
     inherit! :search_paths
     # Pods for testing
