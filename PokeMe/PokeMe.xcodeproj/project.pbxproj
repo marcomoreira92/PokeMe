@@ -12,6 +12,7 @@
 		6D3D1CEE25DABFCA00131D94 /* CDLPokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D1CEC25DABFCA00131D94 /* CDLPokemon.swift */; };
 		6D3D1CF325DD1CBA00131D94 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D1CF225DD1CBA00131D94 /* InfoView.swift */; };
 		6D3D1CF825DD1CCA00131D94 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D3D1CF725DD1CCA00131D94 /* InfoView.xib */; };
+		6D3D1CFD25DD2F0400131D94 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D3D1CFC25DD2F0400131D94 /* Localizable.strings */; };
 		6D41716525D6B8B400D2B8B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D41716425D6B8B400D2B8B2 /* AppDelegate.swift */; };
 		6D41716925D6B8B400D2B8B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D41716825D6B8B400D2B8B2 /* ViewController.swift */; };
 		6D41716C25D6B8B400D2B8B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D41716A25D6B8B400D2B8B2 /* Main.storyboard */; };
@@ -93,6 +94,7 @@
 		6D3D1CEC25DABFCA00131D94 /* CDLPokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDLPokemon.swift; sourceTree = "<group>"; };
 		6D3D1CF225DD1CBA00131D94 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		6D3D1CF725DD1CCA00131D94 /* InfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
+		6D3D1CFC25DD2F0400131D94 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		6D41716125D6B8B400D2B8B2 /* PokeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D41716425D6B8B400D2B8B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D41716825D6B8B400D2B8B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 		6D41715825D6B8B400D2B8B2 = {
 			isa = PBXGroup;
 			children = (
+				6D3D1CFC25DD2F0400131D94 /* Localizable.strings */,
 				6D41716325D6B8B400D2B8B2 /* PokeMe */,
 				6D41717D25D6B8B500D2B8B2 /* PokeMeTests */,
 				6D41718825D6B8B500D2B8B2 /* PokeMeUITests */,
@@ -526,6 +529,7 @@
 				6D41721425D6BD4A00D2B8B2 /* HomeView_iPad.xib in Resources */,
 				6D41721325D6BD4A00D2B8B2 /* HomeView.xib in Resources */,
 				6D41724525DA775B00D2B8B2 /* PokemonCollectionViewCell.xib in Resources */,
+				6D3D1CFD25DD2F0400131D94 /* Localizable.strings in Resources */,
 				6D3D1CF825DD1CCA00131D94 /* InfoView.xib in Resources */,
 				6D41717125D6B8B500D2B8B2 /* Assets.xcassets in Resources */,
 				6D41722C25D6C51C00D2B8B2 /* Menu.xib in Resources */,

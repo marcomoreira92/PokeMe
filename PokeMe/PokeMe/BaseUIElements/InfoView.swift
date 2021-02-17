@@ -52,12 +52,20 @@ class InfoView: UIView {
         switch infoViewViewEnum {
         case .noInternetError(let buttonAction):
             self.buttonAction = buttonAction
-            //TODO: setup noInternetError strings
+            self.errorTitleLabel.text = "infoview.title.no.internet.error".localized
+            self.errorDescriptionLabel.text = "infoview.description.no.internet.error".localized
+            self.tryAgainButton.setTitle("infoview.button.no.internet.error".localized, for: .normal)
+            self.errorIcon.image = UIImage(named: "icon_no_internet")
             break
+            
         case .internalError(let buttonAction):
             self.buttonAction = buttonAction
-            //TODO: setup internalError strings
+            self.errorTitleLabel.text = "infoview.title.internal.error".localized
+            self.errorDescriptionLabel.text = "infoview.description.internal.error".localized
+            self.tryAgainButton.setTitle("infoview.button.internal.error".localized, for: .normal)
+            self.errorIcon.image = UIImage(named: "icon_internal_error")
             break
+            
         case .customError(let imageName, let title, let description, let buttonTitle, let buttonAction):
             self.buttonAction = buttonAction
             self.errorTitleLabel.text = title

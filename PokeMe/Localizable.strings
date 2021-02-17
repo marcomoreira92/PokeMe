@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  PokeMe
+
+  Created by mmalaqui on 17/02/2021.
+  
+*/
+
+"appLanguage" = "EN";
+
+//Infoview
+"infoview.title.no.internet.error" = "No Internet";
+"infoview.description.no.internet.error" = "There is an issue with your internet connection, please check your connection and try again.";
+"infoview.button.no.internet.error" = "Try again...";
+
+
+"infoview.title.internal.error" = "Internal issues";
+"infoview.description.internal.error" = "There is an internal issue, please try again.";
+"infoview.button.internal.error" = "Try again...";
