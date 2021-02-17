@@ -17,6 +17,7 @@ class PokemonDetailInteractorModel {
     init() {
         //TODO
     }
+
     
     init(pokemonDetailDTO: PokemonDetailDTO?){
         if let pokemonDetailDTO = pokemonDetailDTO {
@@ -31,10 +32,37 @@ class PokemonDetailInteractorPokemonModel {
     var imageURL: String?
     
     var stats : [PokemonDetailInteractorPokemonStatsModel] = []
+    
+    init(cdlModel: CDLPokemonModel){
+        self.id = cdlModel.id
+        self.name = cdlModel.name
+        self.height = cdlModel.height
+        if let sprites = cdlModel.sprites {
+            if let sprite = sprites.other{
+                self.imageURL = sprite.officialartwork?.front_default
+            }else{
+                self.imageURL = sprites.front_default
+            }
+        }
+        
+        if let cdlStats = cdlModel.stats{
+            for cdlStat in cdlStats{
+                let base_stat = cdlStat.base_stat
+                let effort = cdlStat.effort
+                let statName = cdlStat.stat?.name
+                self.stats.append(PokemonDetailInteractorPokemonStatsModel(base_stat: base_stat, effort: effort, statName: statName))
+            }
+        }
+    }
 }
 
 class PokemonDetailInteractorPokemonStatsModel{
     var base_stat : Int?
     var effort : Int?
     var statName : String?
+    
+    init(base_stat : Int?, effort : Int?, statName : String?) {
+        
+    }
+    
 }

@@ -94,5 +94,4 @@ enum HomeInteractorErrorModel {
         }
         return .internalError
     }
-    
 }
