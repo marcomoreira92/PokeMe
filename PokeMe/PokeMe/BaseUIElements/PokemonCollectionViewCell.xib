@@ -5,53 +5,53 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PokemonCollectionViewCell" customModule="PokeMe" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="506" height="513"/>
+            <rect key="frame" x="0.0" y="0.0" width="350" height="348"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="506" height="513"/>
+                <rect key="frame" x="0.0" y="0.0" width="350" height="348"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Psl-h5-t48">
-                        <rect key="frame" x="50" y="25" width="406" height="448"/>
+                    <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Psl-h5-t48">
+                        <rect key="frame" x="50" y="25" width="250" height="283"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bKJ-rO-6TV">
-                                <rect key="frame" x="40" y="20" width="326" height="326"/>
-                                <color key="backgroundColor" name="color_accent"/>
+                                <rect key="frame" x="40" y="20" width="170" height="170"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bKJ-rO-6TV" secondAttribute="height" multiplier="1:1" id="YHB-15-Jg7"/>
+                                    <constraint firstAttribute="width" constant="170" id="jTC-Uf-D3d"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon Name Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFO-Kc-9CH">
-                                <rect key="frame" x="20" y="365.5" width="366" height="26.5"/>
+                                <rect key="frame" x="20" y="210" width="210" height="26.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <color key="textColor" name="color_primary_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DH-sA-Kby">
-                                <rect key="frame" x="20" y="392" width="366" height="16"/>
+                                <rect key="frame" x="20" y="236.5" width="210" height="16"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" name="color_accent"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bKJ-rO-6TV" firstAttribute="leading" secondItem="Psl-h5-t48" secondAttribute="leading" constant="40" id="4I6-09-pnA"/>
+                            <constraint firstAttribute="bottom" secondItem="7DH-sA-Kby" secondAttribute="bottom" constant="30.5" id="8oD-NJ-wAj"/>
                             <constraint firstAttribute="trailing" secondItem="AFO-Kc-9CH" secondAttribute="trailing" constant="20" id="Hsq-Gq-Jk8"/>
                             <constraint firstItem="bKJ-rO-6TV" firstAttribute="centerX" secondItem="Psl-h5-t48" secondAttribute="centerX" id="Ihs-Zb-qCo"/>
                             <constraint firstItem="bKJ-rO-6TV" firstAttribute="top" secondItem="Psl-h5-t48" secondAttribute="top" constant="20" id="P6F-bT-iPa"/>
                             <constraint firstAttribute="trailing" secondItem="7DH-sA-Kby" secondAttribute="trailing" constant="20" id="VSr-11-tqj"/>
                             <constraint firstItem="AFO-Kc-9CH" firstAttribute="leading" secondItem="Psl-h5-t48" secondAttribute="leading" constant="20" id="Vak-CL-5uX"/>
                             <constraint firstItem="7DH-sA-Kby" firstAttribute="leading" secondItem="Psl-h5-t48" secondAttribute="leading" constant="20" id="Zql-3k-TnN"/>
-                            <constraint firstItem="AFO-Kc-9CH" firstAttribute="top" secondItem="bKJ-rO-6TV" secondAttribute="bottom" constant="19.5" id="eID-Lb-X4y"/>
-                            <constraint firstAttribute="bottom" secondItem="7DH-sA-Kby" secondAttribute="bottom" constant="40" id="qaz-f4-l1K"/>
+                            <constraint firstItem="AFO-Kc-9CH" firstAttribute="top" secondItem="bKJ-rO-6TV" secondAttribute="bottom" constant="20" id="eID-Lb-X4y"/>
                             <constraint firstItem="7DH-sA-Kby" firstAttribute="top" secondItem="AFO-Kc-9CH" secondAttribute="bottom" id="x6K-KY-Vlv"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -61,7 +61,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="856-SI-GiH">
-                        <rect key="frame" x="396" y="453" width="40" height="40"/>
+                        <rect key="frame" x="240" y="288" width="40" height="40"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIe-Gf-TUi">
                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -97,15 +97,15 @@
                 <constraint firstItem="Psl-h5-t48" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="25" id="ueD-sa-SoL"/>
                 <constraint firstItem="Psl-h5-t48" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="vAb-Bb-jma"/>
             </constraints>
-            <size key="customSize" width="511" height="522"/>
+            <size key="customSize" width="355" height="357"/>
             <connections>
                 <outlet property="favoriteContainerView" destination="856-SI-GiH" id="wyy-mB-LB3"/>
                 <outlet property="pokeCellBackgroundView" destination="Psl-h5-t48" id="Dtc-Gm-enP"/>
-                <outlet property="pokeDescriptionLabel" destination="Psl-h5-t48" id="xfR-8C-Xdp"/>
+                <outlet property="pokeDescriptionLabel" destination="7DH-sA-Kby" id="zfx-9q-gj4"/>
                 <outlet property="pokeImageView" destination="bKJ-rO-6TV" id="rrM-k1-Bci"/>
                 <outlet property="pokeTitleLabel" destination="AFO-Kc-9CH" id="NNj-eH-bn0"/>
             </connections>
-            <point key="canvasLocation" x="566.66666666666674" y="243.41517857142856"/>
+            <point key="canvasLocation" x="453.62318840579712" y="188.16964285714286"/>
         </collectionViewCell>
     </objects>
     <resources>
@@ -119,8 +119,5 @@
         <namedColor name="color_secondary">
             <color red="0.5490196078431373" green="0.3843137254901961" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

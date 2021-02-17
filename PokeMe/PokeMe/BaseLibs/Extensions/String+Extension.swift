@@ -9,6 +9,12 @@ extension String {
         return NSLocalizedString(self, comment: "")
     }
     
+    /// sets first letter to uppercase, "hello world" will be transformed to "Hello world"
+    public var firstCapitalized: String {
+        return prefix(1).capitalized + dropFirst()
+    }
+
+    
     //Log functions
     public func infoLog(functionName: String = #function, fileName: String = #file, lineNumber: Int = #line) {
         var className = (fileName as NSString).lastPathComponent

@@ -17,3 +17,7 @@
 "infoview.title.internal.error" = "Internal issues";
 "infoview.description.internal.error" = "There is an internal issue, please try again.";
 "infoview.button.internal.error" = "Try again...";
+
+
+//Pokemon cell
+"pokemon.cell.height.label" = "Height";
