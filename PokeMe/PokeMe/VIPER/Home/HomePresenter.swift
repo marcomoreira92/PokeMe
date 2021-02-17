@@ -24,20 +24,33 @@ final class HomePresenter: BasePresenter<HomeView, HomeRouterProtocol, HomeInter
         self.interactor?.getHomeData(completion: { (_ homeInteractorModel:HomeInteractorModel? , _ error: HomeInteractorErrorModel?) -> Void in
             
             if let homeInteractorModel = homeInteractorModel{
-                self.viewModel = HomeViewModel(homeInteractorModel: homeInteractorModel)
-                //TODO: update view
+                DispatchQueue.main.async {
+                    self.viewModel = HomeViewModel(homeInteractorModel: homeInteractorModel)
+                    self.view?.homeCollectionView.reloadData()
+                    self.view?.displayCollectionView()
+                }
                 return
             }
             
             if let error = error {
                 switch error {
                 case .internalError:
-                    //TODO:
                     "internalError".errorLog()
+                    DispatchQueue.main.async {
+                        self.view?.infoView.setup(infoViewViewEnum: InfoViewViewEnum.internalError(buttonAction: {
+                            self.view?.refresh()
+                        }))
+                        self.view?.displayInfoView()
+                    }
                     break
                 case .networkError:
-                    //TODO
                     "networkError".errorLog()
+                    DispatchQueue.main.async {
+                        self.view?.infoView.setup(infoViewViewEnum: InfoViewViewEnum.noInternetError(buttonAction: {
+                            self.view?.refresh()
+                        }))
+                        self.view?.displayInfoView()
+                    }
                     break
                     
                 case .noPokemonFound:
@@ -52,10 +65,15 @@ final class HomePresenter: BasePresenter<HomeView, HomeRouterProtocol, HomeInter
             
             // in case there is no interactor model or error then it's an internal issue
             "Internal issue, no interactorModel or errorModel".errorLog()
+            DispatchQueue.main.async {
+                self.view?.infoView.setup(infoViewViewEnum: InfoViewViewEnum.internalError(buttonAction: {
+                    self.view?.refresh()
+                }))
+                self.view?.displayInfoView()
+            }
             return
 
         })
-        
     }
     
     

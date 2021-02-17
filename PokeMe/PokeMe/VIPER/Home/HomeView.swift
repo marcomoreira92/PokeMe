@@ -13,6 +13,7 @@ class HomeView: BaseView<HomePresenterProtocol>, UICollectionViewDelegate, UICol
 
     @IBOutlet weak var homeCollectionView: UICollectionView!
     @IBOutlet weak var menu: Menu!
+    @IBOutlet weak var infoView: InfoView!
     
     let screenName = "Home"
     
@@ -25,6 +26,20 @@ class HomeView: BaseView<HomePresenterProtocol>, UICollectionViewDelegate, UICol
 
     }
     
+    func displayInfoView(){
+        UIView.animate(withDuration: 0.3, animations: {
+            self.homeCollectionView.alpha = 0
+            self.infoView.alpha = 1
+        })
+    }
+    
+    func displayCollectionView(){
+        UIView.animate(withDuration: 0.3, animations: {
+            self.homeCollectionView.alpha = 1
+            self.infoView.alpha = 0
+        })
+    }
+    
     func setupCollectionView(){
         self.homeCollectionView.dataSource = self
         self.homeCollectionView.delegate = self
@@ -34,15 +49,24 @@ class HomeView: BaseView<HomePresenterProtocol>, UICollectionViewDelegate, UICol
         if let collectionViewLayout = homeCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         }
-        
+    }
+    
+    func setupMenu(){
+        self.menu.setup(historyButtonActionFunction: {
+            //TODO
+        }, listButtonActionFunction: {
+            //TODO
+        }, pokeBallButtonActionFunction: {
+            self.refresh()
+        })
     }
     
     // MARK: collectionview delegate functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let _ = self.presenter?.viewModel{
-            return 1//FIXME
+        if let _ = self.presenter?.viewModel?.pokemonModel{
+            return 1
         }
-        return 1
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -52,7 +76,7 @@ class HomeView: BaseView<HomePresenterProtocol>, UICollectionViewDelegate, UICol
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(with: PokemonCollectionViewCell.self, for: indexPath)
-        cell.setup()
+        cell.setup(pokemon: self.presenter!.viewModel!.pokemonModel!)
         
         return cell
     }
@@ -66,7 +90,7 @@ class HomeView: BaseView<HomePresenterProtocol>, UICollectionViewDelegate, UICol
 // MARK: Extensions declaration of all extension and implementations of protocols 
 extension HomeView: BaseViewControllerRefresh {
     func refresh() {
-        //TODO: implement all calls needed to refresh the UI
+        self.presenter?.homeViewDidLoad()
     }
     
     func i18N() {
@@ -75,6 +99,7 @@ extension HomeView: BaseViewControllerRefresh {
     
     func initializeUI() {
         self.setupCollectionView()
+        self.setupMenu()
 
     }
 }

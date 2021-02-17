@@ -22,8 +22,9 @@ class PokemonCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func setup(){
-        //TODO
+    func setup(pokemon: HomeViewPokemonModel){
+        self.pokeTitleLabel.text = pokemon.name
+        //TODO: setup view 
         
     }
     

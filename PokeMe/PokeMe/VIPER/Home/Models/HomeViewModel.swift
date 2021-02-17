@@ -12,9 +12,13 @@ import UIKit
 //Class that represents the model that should be used in the  view of Home
 class HomeViewModel {
     var idHome: String?
+    var pokemonModel : HomeViewPokemonModel?
+    
     init() {}
     init(homeInteractorModel : HomeInteractorModel){
-        //TODO: convert to viewModel
+        if let pokemon = homeInteractorModel.pokemon {
+            self.pokemonModel = HomeViewPokemonModel(homeInteractorModel: pokemon)
+        }
     }
 
 }
