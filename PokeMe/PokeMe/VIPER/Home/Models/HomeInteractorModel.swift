@@ -12,7 +12,7 @@ import UIKit
 //class that represents the interactor data
 class HomeInteractorModel {
     var idHome: String?
-    var pokemon : HomePokemonModel?
+    var pokemon : HomeInteractorPokemonModel?
     
     init() {
         //TODO
@@ -25,7 +25,7 @@ class HomeInteractorModel {
     }
 }
 
-class HomePokemonModel {
+class HomeInteractorPokemonModel {
     var id : Int?
     var name : String?
     var height : Int?

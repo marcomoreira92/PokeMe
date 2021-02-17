@@ -50,7 +50,7 @@ final class HomeInteractor: BaseInteractor<HomePresenterProtocol>, HomeInteracto
                 case .success(let model):
                     if let model = model as? CDLPokemonModel {
                         self.homeInteractorModel = HomeInteractorModel()
-                        self.homeInteractorModel?.pokemon = HomePokemonModel(cdlModel: model)
+                        self.homeInteractorModel?.pokemon = HomeInteractorPokemonModel(cdlModel: model)
                         completion(self.homeInteractorModel , nil)
                         return
                     }

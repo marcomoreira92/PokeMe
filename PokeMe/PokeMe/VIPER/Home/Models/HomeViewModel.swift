@@ -18,3 +18,17 @@ class HomeViewModel {
     }
 
 }
+
+class HomeViewPokemonModel {
+    var id : Int?
+    var name : String?
+    var height : Int?
+    var imageURL : String?
+    
+    init(homeInteractorModel : HomeInteractorPokemonModel) {
+        self.id = homeInteractorModel.id
+        self.name = homeInteractorModel.name
+        self.height = homeInteractorModel.height
+        self.imageURL = homeInteractorModel.imageURL
+    }
+}

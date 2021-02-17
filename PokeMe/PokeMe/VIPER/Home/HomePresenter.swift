@@ -22,8 +22,37 @@ final class HomePresenter: BasePresenter<HomeView, HomeRouterProtocol, HomeInter
     func homeViewDidLoad() {
         
         self.interactor?.getHomeData(completion: { (_ homeInteractorModel:HomeInteractorModel? , _ error: HomeInteractorErrorModel?) -> Void in
-            //TODO: update view and view model 
-            //self.viewModel = HomeViewModel(homeInteractorModel: homeInteractorModel!)
+            
+            if let homeInteractorModel = homeInteractorModel{
+                self.viewModel = HomeViewModel(homeInteractorModel: homeInteractorModel)
+                //TODO: update view
+                return
+            }
+            
+            if let error = error {
+                switch error {
+                case .internalError:
+                    //TODO:
+                    "internalError".errorLog()
+                    break
+                case .networkError:
+                    //TODO
+                    "networkError".errorLog()
+                    break
+                    
+                case .noPokemonFound:
+                    //TODO
+                    "no pokemon found".errorLog()
+                    break
+                default:
+                    break
+                }
+                return
+            }
+            
+            // in case there is no interactor model or error then it's an internal issue
+            "Internal issue, no interactorModel or errorModel".errorLog()
+            return
 
         })
         
