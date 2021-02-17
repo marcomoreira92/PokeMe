@@ -14,6 +14,8 @@ protocol HomeInteractorProtocol: AnyObject {
     var homeDTO: HomeDTO? {get set}
 
     func getHomeData(completion: @escaping(_ homeModelEntity : HomeInteractorModel?, _ error: HomeInteractorErrorModel?) -> Void)
+    func getPokemonID(index: Int, completion: @escaping(_ pokemonID : Int) -> Void)
+    
     func cleanup()
 }
 
@@ -61,6 +63,14 @@ final class HomeInteractor: BaseInteractor<HomePresenterProtocol>, HomeInteracto
             }
         }))
         
+    }
+    
+    func getPokemonID(index: Int, completion: @escaping(_ pokemonID : Int) -> Void){
+        if let id = self.homeInteractorModel?.pokemon?.id{
+            completion(id)
+        }else{
+            completion(-1)
+        }
     }
     
     

@@ -12,6 +12,7 @@ import UIKit
 protocol HomePresenterProtocol: AnyObject {
     var viewModel: HomeViewModel? { get set }
     func homeViewDidLoad()
+    func selectedPokemon(index: Int)
     func cleanup()
 }
 
@@ -73,6 +74,16 @@ final class HomePresenter: BasePresenter<HomeView, HomeRouterProtocol, HomeInter
             }
             return
 
+        })
+    }
+    
+    func selectedPokemon(index: Int){
+        self.interactor?.getPokemonID(index: index, completion: {(_ id: Int) -> Void in
+            let pokemonDetailDTO = PokemonDetailDTO(id: id)
+            let pokemonDetail = PokemonDetailAssembly.pokemonDetailPresenterView(pokemonDetailDTO: pokemonDetailDTO)
+            DispatchQueue.main.async {
+                self.view?.present(pokemonDetail, animated: true, completion: nil)
+            }
         })
     }
     

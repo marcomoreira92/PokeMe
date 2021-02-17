@@ -81,6 +81,10 @@ class HomeView: BaseView<HomePresenterProtocol>, UICollectionViewDelegate, UICol
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.presenter?.selectedPokemon(index: indexPath.row)
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
