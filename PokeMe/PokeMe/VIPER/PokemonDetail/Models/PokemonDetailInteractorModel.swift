@@ -11,7 +11,8 @@ import UIKit
 
 //class that represents the interactor data
 class PokemonDetailInteractorModel {
-    var idPokemonDetail: String?
+    var idPokemonDetail: Int?
+    var pokemon : PokemonDetailInteractorPokemonModel?
     
     init() {
         //TODO
@@ -19,7 +20,21 @@ class PokemonDetailInteractorModel {
     
     init(pokemonDetailDTO: PokemonDetailDTO?){
         if let pokemonDetailDTO = pokemonDetailDTO {
-            //TODO convertion
+            self.idPokemonDetail = pokemonDetailDTO.pokemonID
         }
     }
+}
+class PokemonDetailInteractorPokemonModel {
+    var id : Int?
+    var name : String?
+    var height : Int?
+    var imageURL: String?
+    
+    var stats : [PokemonDetailInteractorPokemonStatsModel] = []
+}
+
+class PokemonDetailInteractorPokemonStatsModel{
+    var base_stat : Int?
+    var effort : Int?
+    var statName : String?
 }

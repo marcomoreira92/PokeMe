@@ -235,13 +235,13 @@
 			isa = PBXGroup;
 			children = (
 				6D3D1D1125DD51F400131D94 /* DTO */,
-				6D3D1D1325DD51F400131D94 /* PokemonDetailRouter.swift */,
+				6D3D1D1B25DD51F400131D94 /* Models */,
 				6D3D1D1425DD51F400131D94 /* XIB */,
+				6D3D1D1325DD51F400131D94 /* PokemonDetailRouter.swift */,
 				6D3D1D1725DD51F400131D94 /* PokemonDetailView.swift */,
 				6D3D1D1825DD51F400131D94 /* PokemonDetailAssembly.swift */,
 				6D3D1D1925DD51F400131D94 /* PokemonDetailInteractor.swift */,
 				6D3D1D1A25DD51F400131D94 /* PokemonDetailPresenter.swift */,
-				6D3D1D1B25DD51F400131D94 /* Models */,
 			);
 			path = PokemonDetail;
 			sourceTree = "<group>";
