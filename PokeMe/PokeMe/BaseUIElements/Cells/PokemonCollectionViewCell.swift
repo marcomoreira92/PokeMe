@@ -57,8 +57,12 @@ class PokemonCollectionViewCell: UICollectionViewCell {
         favoriteContainerView.layer.shadowOpacity = 0.15
         favoriteContainerView.layer.shadowOffset = CGSize(width: .zero, height: 5)
         favoriteContainerView.layer.shadowRadius = 10
-        
-        
     }
 
+}
+
+class PokemonCollectionViewViewModel {
+    var name : String = ""
+    var description : String = ""
+    var imageURL : String? = nil 
 }
