@@ -11,6 +11,7 @@ import UIKit
 
 class HomeView: BaseView<HomePresenterProtocol>, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
 
+    @IBOutlet weak var homeViewTutorial: HomeTutorialView!
     @IBOutlet weak var homeCollectionView: UICollectionView!
     @IBOutlet weak var menu: Menu!
     @IBOutlet weak var infoView: InfoView!
@@ -136,6 +137,6 @@ extension HomeView: BaseViewControllerRefresh {
     func initializeUI() {
         self.setupCollectionView()
         self.setupMenu()
-
+        self.homeViewTutorial.setup()
     }
 }
