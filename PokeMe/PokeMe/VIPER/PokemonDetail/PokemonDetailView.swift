@@ -34,7 +34,7 @@ class PokemonDetailView: BaseView<PokemonDetailPresenterProtocol>, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-           return UIEdgeInsets(top: 0, left: 0, bottom: 64, right: 0)
+           return UIEdgeInsets(top: 30, left: 0, bottom: 0, right: 0)
         }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -76,6 +76,7 @@ class PokemonDetailView: BaseView<PokemonDetailPresenterProtocol>, UICollectionV
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+
     
     func setupCollectionView(){
         self.pokemonDetailCollectionview.dataSource = self

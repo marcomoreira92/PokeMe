@@ -3,6 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,8 +22,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="iue-IX-odw">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <rect key="frame" x="0.0" y="10" width="375" height="657"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="51W-k4-lfd">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -30,12 +31,13 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUh-ae-6qn">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUh-ae-6qn" customClass="ShadowView" customModule="PokeMe" customModuleProvider="target">
                     <rect key="frame" x="25" y="25" width="50" height="50"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVC-S9-rFb">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVC-S9-rFb">
                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                            <state key="normal" title="Button"/>
+                            <color key="tintColor" name="color_primary_text"/>
+                            <state key="normal" image="multiply" catalog="system"/>
                             <connections>
                                 <action selector="closeButtonAction:" destination="-1" eventType="touchUpInside" id="9Zd-Nz-NaJ"/>
                             </connections>
@@ -50,6 +52,18 @@
                         <constraint firstItem="sVC-S9-rFb" firstAttribute="top" secondItem="dUh-ae-6qn" secondAttribute="top" id="rmr-Qo-xP6"/>
                         <constraint firstAttribute="width" constant="50" id="xtL-Xq-imW"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0kK-RI-s0n">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="10"/>
+                    <color key="backgroundColor" name="color_primary"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="Rty-62-meN"/>
+                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -57,15 +71,25 @@
             <constraints>
                 <constraint firstItem="dUh-ae-6qn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="0f7-ce-b5K"/>
                 <constraint firstItem="iue-IX-odw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="52g-tl-Bwa"/>
+                <constraint firstItem="0kK-RI-s0n" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="GLN-TO-2sK"/>
                 <constraint firstItem="dUh-ae-6qn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="VTB-ZO-dOh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="iue-IX-odw" secondAttribute="bottom" id="X1Q-OS-cJR"/>
-                <constraint firstItem="iue-IX-odw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="jds-Ag-C0Y"/>
+                <constraint firstItem="0kK-RI-s0n" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bJB-P2-MLA"/>
+                <constraint firstItem="iue-IX-odw" firstAttribute="top" secondItem="0kK-RI-s0n" secondAttribute="bottom" id="hhd-kF-Co3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iue-IX-odw" secondAttribute="trailing" id="ueP-vm-NT0"/>
+                <constraint firstItem="0kK-RI-s0n" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="x89-Xt-KpD"/>
             </constraints>
-            <point key="canvasLocation" x="103" y="108"/>
+            <point key="canvasLocation" x="101.59999999999999" y="107.49625187406298"/>
         </view>
     </objects>
     <resources>
+        <image name="multiply" catalog="system" width="128" height="111"/>
+        <namedColor name="color_primary">
+            <color red="1" green="0.41960784313725491" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="color_primary_text">
+            <color red="0.25882352941176473" green="0.23137254901960785" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
