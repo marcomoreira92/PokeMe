@@ -16,14 +16,17 @@ class PokemonCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var pokeCellBackgroundView: UIView!
     @IBOutlet weak var pokeImageView: UIImageView!
     @IBOutlet weak var favoriteContainerView: UIView!
+    @IBOutlet weak var favoriteButton: UIButton!
     
+    var pokemon: PokemonCollectionViewViewModel? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     func setup(pokemon: PokemonCollectionViewViewModel){
+        self.pokemon = pokemon
+        
         self.pokeTitleLabel.text = (pokemon.name)?.firstCapitalized
         self.pokeDescriptionLabel.text = pokemon.description
        
@@ -33,6 +36,17 @@ class PokemonCollectionViewCell: UICollectionViewCell {
         }else{
             pokeImageView.image = UIImage(named: "poke_icon")
         }
+        if(pokemon.favoriteAction == nil){
+            self.favoriteContainerView.alpha = 0
+            self.favoriteButton.isEnabled = false
+        }else{
+            self.favoriteContainerView.alpha = 1
+            self.favoriteButton.isEnabled = true
+        }
+    }
+    
+    @IBAction func favoriteButtonAction(_ sender: Any) {
+        self.pokemon?.favoriteAction?()
     }
     
     override func layoutSubviews() {
@@ -41,7 +55,6 @@ class PokemonCollectionViewCell: UICollectionViewCell {
         pokeCellBackgroundView.layer.shadowOpacity = 0.15
         pokeCellBackgroundView.layer.shadowOffset = CGSize(width: .zero, height: 5)
         pokeCellBackgroundView.layer.shadowRadius = 22
-        
         
         favoriteContainerView.layer.shadowOpacity = 0.15
         favoriteContainerView.layer.shadowOffset = CGSize(width: .zero, height: 5)
@@ -55,9 +68,12 @@ class PokemonCollectionViewViewModel {
     var description : String = ""
     var imageURL : String? = nil
     
-    init(name : String?, description : String, imageURL : String?){
+    var favoriteAction: (()->())? = nil
+    
+    init(name : String?, description : String, imageURL : String?, favoriteAction: (()->())? = nil){
         self.name = name
         self.description = description
         self.imageURL = imageURL
+        self.favoriteAction = favoriteAction
     }
 }

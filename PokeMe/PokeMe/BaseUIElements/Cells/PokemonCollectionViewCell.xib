@@ -67,6 +67,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                 <color key="tintColor" name="color_secondary"/>
                                 <state key="normal" image="heart" catalog="system"/>
+                                <connections>
+                                    <action selector="favoriteButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ooQ-16-i3j"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -98,6 +101,7 @@
             </constraints>
             <size key="customSize" width="313" height="357"/>
             <connections>
+                <outlet property="favoriteButton" destination="pIe-Gf-TUi" id="SsB-8b-AQQ"/>
                 <outlet property="favoriteContainerView" destination="856-SI-GiH" id="wyy-mB-LB3"/>
                 <outlet property="pokeCellBackgroundView" destination="Psl-h5-t48" id="Dtc-Gm-enP"/>
                 <outlet property="pokeDescriptionLabel" destination="7DH-sA-Kby" id="zfx-9q-gj4"/>
