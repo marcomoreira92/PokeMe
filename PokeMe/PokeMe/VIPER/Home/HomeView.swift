@@ -60,6 +60,29 @@ class HomeView: BaseView<HomePresenterProtocol>, UICollectionViewDelegate, UICol
             //TODO
         }, pokeBallButtonActionFunction: {
             self.refresh()
+            self.hideTutorial()
+        })
+    }
+    
+    func showTutorial(){
+        let originalFrame = self.homeViewTutorial.frame
+        self.homeViewTutorial.frame = CGRect(x: originalFrame.origin.x, y: originalFrame.origin.y+10, width: originalFrame.width, height: originalFrame.height)
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.homeViewTutorial.alpha = 0.9
+            self.homeViewTutorial.frame = originalFrame
+        })
+    }
+    
+    func hideTutorial(){
+        if(self.homeViewTutorial.alpha == 0){
+            return
+        }
+        
+        let originalFrame = self.homeViewTutorial.frame
+        UIView.animate(withDuration: 0.3, animations: {
+            self.homeViewTutorial.alpha = 0
+            self.homeViewTutorial.frame = CGRect(x: originalFrame.origin.x, y: originalFrame.origin.y+10, width: originalFrame.width, height: originalFrame.height)
         })
     }
     
@@ -80,7 +103,6 @@ class HomeView: BaseView<HomePresenterProtocol>, UICollectionViewDelegate, UICol
         let cell = collectionView.dequeueReusableCell(with: PokemonCollectionViewCell.self, for: indexPath)
         
         if let pokemon = self.presenter?.viewModel?.pokemonModel {
-            
             var descriptionText = ""
             if let id = pokemon.id{
                 descriptionText += "Pokémon \(id)"
@@ -91,7 +113,6 @@ class HomeView: BaseView<HomePresenterProtocol>, UICollectionViewDelegate, UICol
             
             let viewModel = PokemonCollectionViewViewModel(name: pokemon.name, description: descriptionText, imageURL: pokemon.imageURL)
             cell.setup(pokemon: viewModel)
-
         }
         
         return cell
@@ -138,5 +159,10 @@ extension HomeView: BaseViewControllerRefresh {
         self.setupCollectionView()
         self.setupMenu()
         self.homeViewTutorial.setup()
+        self.homeViewTutorial.alpha = 0
+        
+        let _ = Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false) { timer in
+            self.showTutorial()
+        }
     }
 }

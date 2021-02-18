@@ -40,7 +40,7 @@
                         <constraint firstAttribute="height" constant="260" id="lJ6-Qk-E2T"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVO-vZ-VnJ" customClass="HomeTutorialView" customModule="PokeMe" customModuleProvider="target">
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVO-vZ-VnJ" customClass="HomeTutorialView" customModule="PokeMe" customModuleProvider="target">
                     <rect key="frame" x="70" y="595" width="250" height="120"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
