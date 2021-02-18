@@ -25,3 +25,7 @@
 //pokemon stat cell
 "pokemon.stat.base.label" = "Base";
 "pokemon.stat.effort.label" = "Effort";
+
+
+//Home view
+"home.header.subtitle.label" = "Your current pick is:";

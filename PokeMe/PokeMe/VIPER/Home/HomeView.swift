@@ -44,7 +44,8 @@ class HomeView: BaseView<HomePresenterProtocol>, UICollectionViewDelegate, UICol
         self.homeCollectionView.dataSource = self
         self.homeCollectionView.delegate = self
         self.homeCollectionView.register(cellType: PokemonCollectionViewCell.self)
-    
+        self.homeCollectionView.register(UINib(nibName: "HomeViewCollectionReusableHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier:"HomeViewCollectionReusableHeaderView")
+
         
         if let collectionViewLayout = homeCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -101,6 +102,23 @@ class HomeView: BaseView<HomePresenterProtocol>, UICollectionViewDelegate, UICol
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+
+       switch kind {
+       case UICollectionView.elementKindSectionHeader:
+           let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HomeViewCollectionReusableHeaderView", for: indexPath) as! HomeViewCollectionReusableHeaderView
+            headerView.setup()
+           return headerView
+
+       default:
+           assert(false, "Unexpected element kind")
+       }
+   }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: self.homeCollectionView.frame.width, height: 75)
     }
     
 }

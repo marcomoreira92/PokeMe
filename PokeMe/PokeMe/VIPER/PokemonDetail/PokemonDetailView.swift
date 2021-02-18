@@ -30,8 +30,7 @@ class PokemonDetailView: BaseView<PokemonDetailPresenterProtocol>, UICollectionV
     
     // MARK: collectionview delegate functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //TODO:
-        return 1
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -39,6 +38,27 @@ class PokemonDetailView: BaseView<PokemonDetailPresenterProtocol>, UICollectionV
         }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if(indexPath.row == 0){
+            let cell = collectionView.dequeueReusableCell(with: PokemonCollectionViewCell.self, for: indexPath)
+            
+            if let pokemon = self.presenter?.viewModel?.pokemon {
+                
+                var descriptionText = ""
+                if let id = pokemon.id{
+                    descriptionText += "Pokémon \(id)"
+                }
+                if let height = pokemon.height{
+                    descriptionText += " \("pokemon.cell.height.label".localized): \(height)"
+                }
+                
+                let viewModel = PokemonCollectionViewViewModel(name: pokemon.name, description: descriptionText, imageURL: pokemon.imageURL)
+                cell.setup(pokemon: viewModel)
+
+            }
+            
+            return cell
+        }
         
         let cell = collectionView.dequeueReusableCell(with: PokemonStatsCollectionViewCell.self, for: indexPath)
         if let stats = self.presenter?.viewModel?.pokemon?.stats{
@@ -61,6 +81,7 @@ class PokemonDetailView: BaseView<PokemonDetailPresenterProtocol>, UICollectionV
         self.pokemonDetailCollectionview.dataSource = self
         self.pokemonDetailCollectionview.delegate = self
         self.pokemonDetailCollectionview.register(cellType: PokemonStatsCollectionViewCell.self)
+        self.pokemonDetailCollectionview.register(cellType: PokemonCollectionViewCell.self)
     
         if let collectionViewLayout = pokemonDetailCollectionview.collectionViewLayout as? UICollectionViewFlowLayout {
             collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
