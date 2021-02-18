@@ -75,7 +75,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eK5-DC-8JV" customClass="SelfSizedTableView" customModule="PokeMe" customModuleProvider="target">
-                                <rect key="frame" x="20" y="40" width="218" height="154"/>
+                                <rect key="frame" x="20" y="40" width="218" height="159"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -87,7 +87,7 @@
                             <constraint firstAttribute="trailing" secondItem="eK5-DC-8JV" secondAttribute="trailing" constant="20" id="Xgt-8N-wJu"/>
                             <constraint firstAttribute="trailing" secondItem="HoU-EX-oSQ" secondAttribute="trailing" constant="20" id="cKd-97-OPZ"/>
                             <constraint firstItem="eK5-DC-8JV" firstAttribute="leading" secondItem="lSe-m4-aJz" secondAttribute="leading" constant="20" id="gCd-gm-pth"/>
-                            <constraint firstAttribute="bottom" secondItem="eK5-DC-8JV" secondAttribute="bottom" constant="20" id="tFs-9U-S62"/>
+                            <constraint firstAttribute="bottom" secondItem="eK5-DC-8JV" secondAttribute="bottom" constant="15" id="tFs-9U-S62"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

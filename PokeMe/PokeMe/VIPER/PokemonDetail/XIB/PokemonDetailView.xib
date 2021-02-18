@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="landscape" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -18,11 +18,18 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poke_icon_background" translatesAutoresizingMaskIntoConstraints="NO" id="h3C-ae-HI3">
+                    <rect key="frame" x="160" y="597" width="215" height="215"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="h3C-ae-HI3" secondAttribute="height" multiplier="1:1" id="WaW-kP-rLZ"/>
+                        <constraint firstAttribute="width" constant="215" id="zlI-QO-Jyt"/>
+                    </constraints>
+                </imageView>
                 <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="iue-IX-odw">
-                    <rect key="frame" x="44" y="10" width="724" height="365"/>
+                    <rect key="frame" x="0.0" y="10" width="375" height="802"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="51W-k4-lfd">
                         <size key="itemSize" width="128" height="128"/>
@@ -32,7 +39,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUh-ae-6qn" customClass="ShadowView" customModule="PokeMe" customModuleProvider="target">
-                    <rect key="frame" x="69" y="25" width="50" height="50"/>
+                    <rect key="frame" x="25" y="69" width="50" height="50"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVC-S9-rFb">
                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -59,7 +66,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0kK-RI-s0n">
-                    <rect key="frame" x="0.0" y="0.0" width="812" height="10"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="10"/>
                     <color key="backgroundColor" name="color_primary"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="10" id="Rty-62-meN"/>
@@ -72,8 +79,10 @@
                 <constraint firstItem="dUh-ae-6qn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="0f7-ce-b5K"/>
                 <constraint firstItem="iue-IX-odw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="52g-tl-Bwa"/>
                 <constraint firstItem="0kK-RI-s0n" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="GLN-TO-2sK"/>
+                <constraint firstAttribute="trailing" secondItem="h3C-ae-HI3" secondAttribute="trailing" id="KYN-Dm-lg7"/>
                 <constraint firstItem="dUh-ae-6qn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="VTB-ZO-dOh"/>
                 <constraint firstAttribute="bottom" secondItem="iue-IX-odw" secondAttribute="bottom" id="X1Q-OS-cJR"/>
+                <constraint firstAttribute="bottom" secondItem="h3C-ae-HI3" secondAttribute="bottom" id="XG3-mk-3s4"/>
                 <constraint firstItem="0kK-RI-s0n" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bJB-P2-MLA"/>
                 <constraint firstItem="iue-IX-odw" firstAttribute="top" secondItem="0kK-RI-s0n" secondAttribute="bottom" id="hhd-kF-Co3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iue-IX-odw" secondAttribute="trailing" id="ueP-vm-NT0"/>
@@ -84,6 +93,7 @@
     </objects>
     <resources>
         <image name="multiply" catalog="system" width="128" height="111"/>
+        <image name="poke_icon_background" width="877" height="877"/>
         <namedColor name="color_primary">
             <color red="1" green="0.41960784313725491" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
