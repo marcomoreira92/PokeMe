@@ -9,6 +9,7 @@ enum CommonDataLayerEndpointBuilderEnum{
     
     //Add all endpoints here
     case getPokemonByID(ID : String)
+    case saveFavorite
     
     
     /**
@@ -19,6 +20,8 @@ enum CommonDataLayerEndpointBuilderEnum{
         switch self {
         case .getPokemonByID(let ID):
             return "https://pokeapi.co/api/v2/pokemon/\(ID)"
+        case .saveFavorite:
+            return "https://webhook.site/514d236a-c238-46bb-9091-3f511f7329de"
         default:
             return ""
         }

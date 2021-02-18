@@ -39,14 +39,30 @@ class BaseCDL {
                     return
                 }
 
-                do {
-                    // try to decode
-                    let decodedObject = try JSONDecoder().decode(objectType.self, from: data)
-                    completion(CDLResponse.success(decodedObject))
-                    return
-                } catch let error {
-                    completion(CDLResponse.failure(CDLErrorType.jsonParsingError(error as! DecodingError)))
+                
+                if let httpResponse = response as? HTTPURLResponse{
+                    if httpResponse.statusCode == 200{
+                        if(data.count != 0){
+                            do {
+                                // try to decode
+                                let decodedObject = try JSONDecoder().decode(objectType.self, from: data)
+                                completion(CDLResponse.success(decodedObject))
+                                return
+                            } catch let error {
+                                completion(CDLResponse.failure(CDLErrorType.jsonParsingError(error as! DecodingError)))
+                            }
+                        }else{
+                            //Data is empty
+                            completion(CDLResponse.success(nil))
+                            return
+                        }
+                    }else{
+                        completion(CDLResponse.failure(CDLErrorType.serverErrorWithStatusCode(httpResponse.statusCode)))
+                    }
+                }else{
+                    completion(CDLResponse.failure(CDLErrorType.noDataError))
                 }
+
             })
             task.resume()
         }
@@ -65,6 +81,7 @@ class BaseCDL {
         case jsonParsingError(Error)
         case invalidURLError
         case invalidParameters
+        case serverErrorWithStatusCode(Int)
         
         var description: String {
             switch self {
@@ -74,6 +91,7 @@ class BaseCDL {
             case .jsonParsingError: return "jsonParsingError"
             case .invalidURLError: return "invalidURLError"
             case .invalidParameters: return "invalidParameters"
+            case .serverErrorWithStatusCode: return "serverErrorWithStatusCode"
 
             }
         }

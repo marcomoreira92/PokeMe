@@ -109,4 +109,30 @@ class PokeMeTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
     
+    func test_save_favorite() throws {
+        let expectation = XCTestExpectation(description: "calls CDL layer to save specific pokemon")
+        let pokemonToSave = CDLPokemonModel()
+        pokemonToSave.id = 1
+        pokemonToSave.name = "bulbasaur"
+        pokemonToSave.height = 7
+        
+        pokemonCDL.saveFavorite(pokemonModel: pokemonToSave, subscriber: ("CDLtest", { ( response: CDLResponse? ) -> Void in
+            if let response = response {
+                switch response {
+                case .failure(let error):
+                    XCTAssert(false, error.description)
+                    break
+                case .success(let model):
+                    XCTAssert((model as? CDLSavePokemonModel)?.success == true )
+                    break
+                }
+            }else{
+                XCTAssert(false, "no response avaliable")
+            }
+            expectation.fulfill()
+        }))
+        
+        wait(for: [expectation], timeout: 5)
+    }
+    
 }
