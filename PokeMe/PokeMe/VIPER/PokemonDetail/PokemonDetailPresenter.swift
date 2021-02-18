@@ -20,10 +20,16 @@ final class PokemonDetailPresenter: BasePresenter<PokemonDetailView, PokemonDeta
     
 
     func pokemonDetailViewDidLoad() {
-        //TODO
         self.interactor?.getPokemonDetailData(completion: { (_ pokemonDetailInteractorModel:PokemonDetailInteractorModel?, _ error: PokemonDetailInteractorErrorModel?) -> Void in
-            //self.viewModel = PokemonDetailViewModel(pokemonDetailInteractorModel: pokemonDetailInteractorModel)
-            //TODO: update view
+            if let interactorModel = pokemonDetailInteractorModel{
+                DispatchQueue.main.async {
+                    self.viewModel = PokemonDetailViewModel(pokemonDetailInteractorModel: interactorModel)
+                    self.view?.pokemonDetailCollectionview.reloadData()
+                }
+                return
+            }
+            //TODO: handle errors
+            
         })
         
     }

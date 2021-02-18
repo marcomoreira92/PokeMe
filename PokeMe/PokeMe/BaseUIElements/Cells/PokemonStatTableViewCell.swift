@@ -9,6 +9,16 @@ import UIKit
 
 class PokemonStatTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var statNameLabel: UILabel!
+    @IBOutlet weak var statBaseLabel: UILabel!
+    @IBOutlet weak var statEffortLabel: UILabel!
+    
+    func setup(name: String?, base: String?, effort: String?){
+        self.statNameLabel.text = name
+        self.statBaseLabel.text = base
+        self.statEffortLabel.text = effort
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -41,7 +41,13 @@ class PokemonDetailView: BaseView<PokemonDetailPresenterProtocol>, UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(with: PokemonStatsCollectionViewCell.self, for: indexPath)
-        cell.setup()
+        if let stats = self.presenter?.viewModel?.pokemon?.stats{
+            var pokemonStatsCollectionViewCellViewModel : [PokemonStatsCollectionViewCellViewModel] = []
+            for stat in stats{
+                pokemonStatsCollectionViewCellViewModel.append(PokemonStatsCollectionViewCellViewModel(base_stat: stat.base_stat, effort: stat.effort, statName: stat.statName))
+            }
+            cell.setup(viewModel: pokemonStatsCollectionViewCellViewModel)
+        }
         
         return cell
     }

@@ -62,7 +62,9 @@ class PokemonDetailInteractorPokemonStatsModel{
     var statName : String?
     
     init(base_stat : Int?, effort : Int?, statName : String?) {
-        
+        self.base_stat = base_stat
+        self.effort = effort
+        self.statName = statName
     }
     
 }

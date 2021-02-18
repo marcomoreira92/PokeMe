@@ -15,14 +15,19 @@ class PokemonStatsCollectionViewCell: UICollectionViewCell, UITableViewDataSourc
     @IBOutlet weak var effortLabel: UILabel!
     @IBOutlet weak var cellBakcgroundContainerView: UIView!
     
+    var viewModel: [PokemonStatsCollectionViewCellViewModel] = []
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    func setup(){
+    func setup(viewModel: [PokemonStatsCollectionViewCellViewModel]){
         //base UI setup
+        self.baseLabel.text = "pokemon.stat.base.label".localized
+        self.effortLabel.text = "pokemon.stat.effort.label".localized
         
+        self.viewModel = viewModel
         
         //tableview setup
         self.tableview.delegate = self
@@ -33,13 +38,14 @@ class PokemonStatsCollectionViewCell: UICollectionViewCell, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return viewModel.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(with: PokemonStatTableViewCell.self, for: indexPath)
-        //cell.setup()
+        cell.setup(name: viewModel[indexPath.row].statName, base: viewModel[indexPath.row].base_stat, effort: viewModel[indexPath.row].effort)
+
         return cell
     }
     
@@ -67,4 +73,16 @@ class SelfSizedTableView: UITableView {
     let height = min(contentSize.height, maxHeight)
     return CGSize(width: contentSize.width, height: height)
   }
+}
+
+class PokemonStatsCollectionViewCellViewModel {
+    var base_stat : String?
+    var effort : String?
+    var statName : String?
+    
+    init(base_stat : String?, effort : String?, statName : String?) {
+        self.base_stat = base_stat
+        self.effort = effort
+        self.statName = statName
+    }
 }

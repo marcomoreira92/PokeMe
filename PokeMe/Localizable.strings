@@ -21,3 +21,7 @@
 
 //Pokemon cell
 "pokemon.cell.height.label" = "Height";
+
+//pokemon stat cell
+"pokemon.stat.base.label" = "Base";
+"pokemon.stat.effort.label" = "Effort";
