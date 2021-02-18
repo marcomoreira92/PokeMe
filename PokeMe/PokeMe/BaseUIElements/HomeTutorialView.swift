@@ -12,9 +12,8 @@ class HomeTutorialView: UIView {
     let nibName = "HomeTutorialView"
 
     @IBOutlet weak var calloutBackgroundView: UIView!
-    //@IBOutlet weak var calloutTrianguleContainerView: UIView!
-    
     @IBOutlet weak var tutorialLabel: UILabel!
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
@@ -37,7 +36,7 @@ class HomeTutorialView: UIView {
     }
     
     func setup(){
-        //calloutTrianguleContainerView.addSubview(TriangleView(frame: calloutTrianguleContainerView.frame))
+        self.tutorialLabel.text = "tutorial.label.info".localized
     }
 
 }

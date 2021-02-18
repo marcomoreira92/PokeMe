@@ -161,7 +161,7 @@ extension HomeView: BaseViewControllerRefresh {
         self.homeViewTutorial.setup()
         self.homeViewTutorial.alpha = 0
         
-        let _ = Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false) { timer in
+        let _ = Timer.scheduledTimer(withTimeInterval: 3.5, repeats: false) { timer in
             self.showTutorial()
         }
     }

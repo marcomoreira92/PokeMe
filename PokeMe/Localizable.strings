@@ -29,3 +29,4 @@
 
 //Home view
 "home.header.subtitle.label" = "Your current pick is:";
+"tutorial.label.info" = "Hit the Pokeball to generate a new Pokémon!";
