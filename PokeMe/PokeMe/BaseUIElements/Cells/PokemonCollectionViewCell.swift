@@ -23,19 +23,9 @@ class PokemonCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func setup(pokemon: HomeViewPokemonModel){
+    func setup(pokemon: PokemonCollectionViewViewModel){
         self.pokeTitleLabel.text = (pokemon.name)?.firstCapitalized
-        var descriptionText = ""
-        
-        if let id = pokemon.id{
-            descriptionText += "Pokémon \(id)"
-        }
-        if let height = pokemon.height{
-            descriptionText += " \("pokemon.cell.height.label".localized): \(height)"
-        }
-        self.pokeDescriptionLabel.text = descriptionText
-
-        
+        self.pokeDescriptionLabel.text = pokemon.description
        
         if let imgURL = pokemon.imageURL {
             pokeImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
@@ -43,7 +33,6 @@ class PokemonCollectionViewCell: UICollectionViewCell {
         }else{
             pokeImageView.image = UIImage(named: "poke_icon")
         }
-
     }
     
     override func layoutSubviews() {
@@ -62,7 +51,13 @@ class PokemonCollectionViewCell: UICollectionViewCell {
 }
 
 class PokemonCollectionViewViewModel {
-    var name : String = ""
+    var name : String?
     var description : String = ""
-    var imageURL : String? = nil 
+    var imageURL : String? = nil
+    
+    init(name : String?, description : String, imageURL : String?){
+        self.name = name
+        self.description = description
+        self.imageURL = imageURL
+    }
 }

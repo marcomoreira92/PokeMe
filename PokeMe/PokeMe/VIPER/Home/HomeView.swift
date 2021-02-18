@@ -76,7 +76,21 @@ class HomeView: BaseView<HomePresenterProtocol>, UICollectionViewDelegate, UICol
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(with: PokemonCollectionViewCell.self, for: indexPath)
-        cell.setup(pokemon: self.presenter!.viewModel!.pokemonModel!)
+        
+        if let pokemon = self.presenter?.viewModel?.pokemonModel {
+            
+            var descriptionText = ""
+            if let id = pokemon.id{
+                descriptionText += "Pokémon \(id)"
+            }
+            if let height = pokemon.height{
+                descriptionText += " \("pokemon.cell.height.label".localized): \(height)"
+            }
+            
+            let viewModel = PokemonCollectionViewViewModel(name: pokemon.name, description: descriptionText, imageURL: pokemon.imageURL)
+            cell.setup(pokemon: viewModel)
+
+        }
         
         return cell
     }
