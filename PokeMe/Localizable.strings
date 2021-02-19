@@ -20,6 +20,9 @@
 "infoview.description.internal.error" = "There is an internal issue, please try again.";
 "infoview.button.internal.error" = "Try again...";
 
+"infoview.title.no.favorites.error" = "No Favorites";
+"infoview.description.no.favorites.error" = "Don't forget to add your favorite pokemons to your favorite list";
+
 
 //Pokemon cell
 "pokemon.cell.height.label" = "Height";

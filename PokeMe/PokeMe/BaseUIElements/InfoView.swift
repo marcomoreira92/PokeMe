@@ -56,6 +56,8 @@ class InfoView: UIView {
             self.errorDescriptionLabel.text = "infoview.description.no.internet.error".localized
             self.tryAgainButton.setTitle("infoview.button.no.internet.error".localized, for: .normal)
             self.errorIcon.image = UIImage(named: "icon_no_internet")
+            self.tryAgainButton.alpha = 1
+            self.tryAgainButton.isEnabled = true
             break
             
         case .internalError(let buttonAction):
@@ -64,14 +66,25 @@ class InfoView: UIView {
             self.errorDescriptionLabel.text = "infoview.description.internal.error".localized
             self.tryAgainButton.setTitle("infoview.button.internal.error".localized, for: .normal)
             self.errorIcon.image = UIImage(named: "icon_internal_error")
+            self.tryAgainButton.alpha = 1
+            self.tryAgainButton.isEnabled = true
             break
-            
+        
+        case .noFavorites:
+            self.errorTitleLabel.text = "infoview.title.no.favorites.error".localized
+            self.errorDescriptionLabel.text = "infoview.description.no.favorites.error".localized
+            self.errorIcon.image = UIImage(named: "icon_no_favorite_error")
+            self.tryAgainButton.alpha = 0
+            self.tryAgainButton.isEnabled = false
+            break
         case .customError(let imageName, let title, let description, let buttonTitle, let buttonAction):
             self.buttonAction = buttonAction
             self.errorTitleLabel.text = title
             self.errorDescriptionLabel.text = description
             self.tryAgainButton.setTitle(buttonTitle, for: .normal)
             self.errorIcon.image = UIImage(named: imageName)
+            self.tryAgainButton.alpha = 1
+            self.tryAgainButton.isEnabled = true
             break
         }
     }
@@ -81,5 +94,6 @@ class InfoView: UIView {
 enum InfoViewViewEnum {
     case noInternetError(buttonAction: ()->())
     case internalError(buttonAction: ()->())
+    case noFavorites
     case customError(imageName: String, title: String, description: String, buttonTitle: String, buttonAction: ()->())
 }
