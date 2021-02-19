@@ -63,7 +63,7 @@ class PokemonCollectionViewCell: UICollectionViewCell {
     
     @IBAction func favoriteButtonAction(_ sender: Any) {
         favoriteStatus = !favoriteStatus
-        self.pokemon?.favoriteAction?()
+        self.pokemon?.favoriteAction?(self.favoriteStatus)
     }
     
     override func layoutSubviews() {
@@ -85,10 +85,10 @@ class PokemonCollectionViewViewModel {
     var description : String = ""
     var imageURL : String? = nil
     
-    var favoriteAction: (()->())? = nil
+    var favoriteAction: ((_ status: Bool)->())? = nil
     var favoriteStatus = false
     
-    init(name : String?, description : String, imageURL : String?, favoriteAction: (()->())? = nil, favoriteStatus : Bool = false ){
+    init(name : String?, description : String, imageURL : String?, favoriteAction: ((_ status: Bool)->())? = nil, favoriteStatus : Bool = false ){
         self.name = name
         self.description = description
         self.imageURL = imageURL

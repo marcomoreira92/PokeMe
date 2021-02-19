@@ -13,6 +13,7 @@ protocol HomePresenterProtocol: AnyObject {
     var viewModel: HomeViewModel? { get set }
     func homeViewDidLoad()
     func selectedPokemon(index: Int)
+    func updateFavoriteStatus(index: Int, favoriteStatus: Bool)
     func cleanup()
 }
 
@@ -74,6 +75,13 @@ final class HomePresenter: BasePresenter<HomeView, HomeRouterProtocol, HomeInter
             }
             return
 
+        })
+    }
+    
+    func updateFavoriteStatus(index: Int, favoriteStatus: Bool){
+        self.interactor?.updateFavoriteStatus(index: index, favoriteStatus: favoriteStatus, completion: {(sucess: Bool) -> Void in
+            //TODO
+            "info".infoLog()
         })
     }
     

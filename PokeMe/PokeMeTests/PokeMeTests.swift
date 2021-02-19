@@ -122,7 +122,7 @@ class PokeMeTests: XCTestCase {
         stat1.stat?.name = "hp"
         pokemonToSave.stats = [stat1]
         
-        pokemonCDL.saveFavorite(pokemonModel: pokemonToSave, subscriber: ("CDLtest", { ( response: CDLResponse? ) -> Void in
+        pokemonCDL.saveOrRemoveFavorite(pokemonModel: pokemonToSave, subscriber: ("CDLtest", { ( response: CDLResponse? ) -> Void in
             if let response = response {
                 switch response {
                 case .failure(let error):
@@ -154,7 +154,7 @@ class PokeMeTests: XCTestCase {
         stat1.stat?.name = "hp"
         pokemonToSave.stats = [stat1]
         
-        pokemonCDL.saveFavorite(pokemonModel: pokemonToSave, subscriber: ("CDLtest", { ( response: CDLResponse? ) -> Void in
+        pokemonCDL.saveOrRemoveFavorite(pokemonModel: pokemonToSave, subscriber: ("CDLtest", { ( response: CDLResponse? ) -> Void in
             if let response = response {
                 switch response {
                 case .failure(let error):

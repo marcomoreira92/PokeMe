@@ -15,6 +15,7 @@ protocol HomeInteractorProtocol: AnyObject {
 
     func getHomeData(completion: @escaping(_ homeModelEntity : HomeInteractorModel?, _ error: HomeInteractorErrorModel?) -> Void)
     func getPokemonID(index: Int, completion: @escaping(_ pokemonID : Int) -> Void)
+    func updateFavoriteStatus(index: Int, favoriteStatus: Bool, completion: @escaping(_ sucess: Bool)-> Void)
     
     func cleanup()
 }
@@ -37,6 +38,40 @@ final class HomeInteractor: BaseInteractor<HomePresenterProtocol>, HomeInteracto
         
         let randomPokemonID = Int.random(in: (MIN_POKEMON_NUMBER-1)...MAX_POKEMON_NUMBER)
         self.getPokemonByID(id: "\(randomPokemonID)", completion: completion)
+    }
+    
+    func updateFavoriteStatus(index: Int, favoriteStatus: Bool, completion: @escaping(_ sucess: Bool)-> Void){
+        if let id = self.homeInteractorModel?.pokemon?.id{
+            self.pokemonCDL.getPokemonByID(pokemonID: "\(id)", subscriber: (self.InteractorID, {( response: CDLResponse? ) -> Void in
+                if let response = response{
+                    switch response {
+                    case .success(let model):
+                        if let model = model as? CDLPokemonModel {
+                            self.pokemonCDL.saveOrRemoveFavorite(save: favoriteStatus, pokemonModel: model, subscriber: (self.InteractorID, {(response: CDLResponse? ) -> Void in
+                                if let favoriteResponse = response {
+                                    switch favoriteResponse {
+                                    case .success(_):
+                                        completion(true)
+                                        return
+                                    default:
+                                        completion(false)
+                                        return 
+                                    }
+                                }else{
+                                    completion(false)
+                                    return
+                                }
+                            }))
+                        }else{
+                            completion(false)
+                            return
+                        }
+                    default:
+                        break
+                    }
+                }
+            }))
+        }
     }
     
     func getPokemonByID(id: String, completion: @escaping(_ homeModelEntity : HomeInteractorModel?, _ error: HomeInteractorErrorModel?) -> Void){
