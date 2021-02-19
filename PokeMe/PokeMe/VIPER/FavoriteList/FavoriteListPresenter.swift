@@ -20,9 +20,7 @@ final class FavoriteListPresenter: BasePresenter<FavoriteListView, FavoriteListR
     
 
     func favoriteListViewDidLoad() {
-        //TODO
-        self.interactor?.getFavoriteListData(completion: { (_ favoriteListInteractorModel:FavoriteListInteractorModel) -> Void in
-            self.viewModel = FavoriteListViewModel(favoriteListInteractorModel: favoriteListInteractorModel)
+        self.interactor?.getFavoriteListData(completion: { (_ favoriteListInteractorModel:FavoriteListInteractorModel?, _ error : FavoriteListInteractorErrorModel?) -> Void in
             //TODO: update view
         })
         
