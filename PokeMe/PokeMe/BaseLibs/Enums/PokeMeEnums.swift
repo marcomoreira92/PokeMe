@@ -11,5 +11,5 @@ import Foundation
 public enum XibFile: String {
     case homeView = "HomeView"
     case pokemonDetailView = "PokemonDetailView"
-    case favoriteListView = "FbbavoriteListView"
+    case favoriteListView = "FavoriteListView"
 }
