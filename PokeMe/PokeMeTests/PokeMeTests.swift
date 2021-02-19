@@ -141,4 +141,59 @@ class PokeMeTests: XCTestCase {
         wait(for: [expectation], timeout: 5)
     }
     
+    func test_save_favorite_and_check_cache() throws {
+        let expectation = XCTestExpectation(description: "calls CDL layer to save specific pokemon")
+        let pokemonToSave = CDLPokemonModel()
+        pokemonToSave.id = 1
+        pokemonToSave.name = "bulbasaur"
+        pokemonToSave.height = 7
+        let stat1 = CDLStatsModel()
+        stat1.base_stat = 10
+        stat1.effort = 0
+        stat1.stat = CDLStatDescriptionModel()
+        stat1.stat?.name = "hp"
+        pokemonToSave.stats = [stat1]
+        
+        pokemonCDL.saveFavorite(pokemonModel: pokemonToSave, subscriber: ("CDLtest", { ( response: CDLResponse? ) -> Void in
+            if let response = response {
+                switch response {
+                case .failure(let error):
+                    XCTAssert(false, error.description)
+                    break
+                case .success(let model):
+                    XCTAssert((model as? CDLSavePokemonModel)?.success == true )
+                    self.pokemonCDL.getFavoriteList(subscriber: ("CDLtest", { ( favoriteListResponse: CDLResponse? ) -> Void in
+                        if let favoriteListResponse = favoriteListResponse {
+                            switch favoriteListResponse {
+                            case .failure(let error):
+                                XCTAssert(false, error.description)
+                                break
+                            case .success(let model):
+                                if let model = model as? CDLFavoritePokemonListModel{
+                                    XCTAssert(model.favoritePokemonIDList.count == 1, "no favorite saved")
+                                    XCTAssert(model.favoritePokemonIDList[0].id == pokemonToSave.id, "save failed")
+                                    XCTAssert(model.favoritePokemonIDList[0].name == pokemonToSave.name, "save failed")
+                                    XCTAssert(model.favoritePokemonIDList[0].height == pokemonToSave.height, "save failed")
+
+                                    
+                                }else{
+                                    XCTAssert(false, "no favorites saved")
+                                }
+                                break
+                            }
+                        }
+                        expectation.fulfill()
+                    }))
+                    
+                    break
+                }
+            }else{
+                XCTAssert(false, "no response avaliable")
+            }
+            
+        }))
+        
+        wait(for: [expectation], timeout: 5)
+    }
+    
 }

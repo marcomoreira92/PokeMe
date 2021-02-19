@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 class CDLPokemon : BaseCDL{
     
+    let favoritePokemonList = "favoritePokemonList"
+    
     override init() {
         super.init()
         cacheID = "CDLPokemon"
@@ -46,6 +48,18 @@ class CDLPokemon : BaseCDL{
         }
     }
     
+    func getFavoriteList(subscriber: CommonDataLayerSubscriber){
+        //returns favorite from cache since there is no service avaliable to save 
+        if let favoriteList = CommonDataLayer.shared.returnFromCache(cacheID: self.favoritePokemonList){
+            let response = CDLResponse.success(favoriteList as CommonDataLayerBaseModel)
+            subscriber.1(response)
+        }else{
+            let response = CDLResponse<CommonDataLayerBaseModel>.failure(CDLErrorType.noDataError)
+            subscriber.1(response)
+        }
+        
+    }
+    
     func saveFavorite(pokemonModel: CDLPokemonModel, subscriber: CommonDataLayerSubscriber){
         do{
             let jsonEncoder = JSONEncoder()
@@ -56,6 +70,18 @@ class CDLPokemon : BaseCDL{
             self.dataRequest(with: CommonDataLayerEndpointBuilderEnum.saveFavorite.endpoint, objectType: CDLSavePokemonModel.self, httpMethod : .post, parameters: data){ (result: CDLResponse) in
                 switch result {
                 case .success(_):
+                    
+                    //save to cache
+                    if let favoriteList = CommonDataLayer.shared.returnFromCache(cacheID: self.favoritePokemonList) as? CDLFavoritePokemonListModel{
+                        CommonDataLayer.shared.removeFromCache(cacheID: self.favoritePokemonList)
+                        favoriteList.favoritePokemonIDList.append(pokemonModel)
+                        CommonDataLayer.shared.saveToCache(cacheID: self.favoritePokemonList, model: favoriteList)
+                    }else{
+                        let favoriteList = CDLFavoritePokemonListModel()
+                        favoriteList.favoritePokemonIDList.append(pokemonModel)
+                        CommonDataLayer.shared.saveToCache(cacheID: self.favoritePokemonList, model: favoriteList)
+                    }
+                    
                     let cdlSavePokemonModel = CDLSavePokemonModel()
                     cdlSavePokemonModel.success = true
                     let response = CDLResponse.success(cdlSavePokemonModel as CommonDataLayerBaseModel)
