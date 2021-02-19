@@ -22,14 +22,18 @@ class PokemonCollectionViewCell: UICollectionViewCell {
     var favoriteStatus = false {
         didSet{
             if favoriteStatus {
-                favoriteContainerView.backgroundColor = UIColor(named: "color_primary")
-                favoriteButton.tintColor = UIColor.white
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.favoriteContainerView.backgroundColor = UIColor(named: "color_primary")
+                    self.favoriteButton.tintColor = UIColor.white
+                })
+
             }else{
-                favoriteContainerView.backgroundColor = UIColor.systemBackground
-                favoriteButton.tintColor = UIColor(named: "color_primary_text")
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.favoriteContainerView.backgroundColor = UIColor.systemBackground
+                    self.favoriteButton.tintColor = UIColor(named: "color_primary_text")
+                })
             }
         }
-        
     }
     
     override func awakeFromNib() {
