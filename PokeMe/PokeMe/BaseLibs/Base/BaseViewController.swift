@@ -43,7 +43,7 @@ class BaseViewController: UIViewController{
             alert.addAction(UIAlertAction(title: ("BaseViewController.Alert.Ok").localized, style: UIAlertAction.Style.default, handler: nil))
         }
 
-        alert.view.tintColor = UIColor(red:0.78, green:0.82, blue:0.02, alpha:1.0)
+        alert.view.tintColor = UIColor(named: "color_primary")
         self.present(alert, animated: true, completion: nil)
     }
     

@@ -80,8 +80,16 @@ final class HomePresenter: BasePresenter<HomeView, HomeRouterProtocol, HomeInter
     
     func updateFavoriteStatus(index: Int, favoriteStatus: Bool){
         self.interactor?.updateFavoriteStatus(index: index, favoriteStatus: favoriteStatus, completion: {(sucess: Bool) -> Void in
-            //TODO
-            "info".infoLog()
+            if(sucess == false){
+                DispatchQueue.main.async {
+                    if(favoriteStatus == true){
+                        self.view?.showAlertWith(title: "favorite.save.error.title".localized, message: "favorite.save.error.description".description, actions: nil)
+                    }else{
+                        self.view?.showAlertWith(title: "favorite.delete.error.title".localized, message: "favorite.delete.error.description".description, actions: nil)
+                    }
+                    
+                }
+            }
         })
     }
     
