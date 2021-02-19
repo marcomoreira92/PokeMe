@@ -115,6 +115,12 @@ class PokeMeTests: XCTestCase {
         pokemonToSave.id = 1
         pokemonToSave.name = "bulbasaur"
         pokemonToSave.height = 7
+        let stat1 = CDLStatsModel()
+        stat1.base_stat = 10
+        stat1.effort = 0
+        stat1.stat = CDLStatDescriptionModel()
+        stat1.stat?.name = "hp"
+        pokemonToSave.stats = [stat1]
         
         pokemonCDL.saveFavorite(pokemonModel: pokemonToSave, subscriber: ("CDLtest", { ( response: CDLResponse? ) -> Void in
             if let response = response {
