@@ -19,6 +19,18 @@ class PokemonCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var favoriteButton: UIButton!
     
     var pokemon: PokemonCollectionViewViewModel? = nil
+    var favoriteStatus = false {
+        didSet{
+            if favoriteStatus {
+                favoriteContainerView.backgroundColor = UIColor(named: "color_primary")
+                favoriteButton.tintColor = UIColor.white
+            }else{
+                favoriteContainerView.backgroundColor = UIColor.systemBackground
+                favoriteButton.tintColor = UIColor(named: "color_primary_text")
+            }
+        }
+        
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,7 +38,7 @@ class PokemonCollectionViewCell: UICollectionViewCell {
     
     func setup(pokemon: PokemonCollectionViewViewModel){
         self.pokemon = pokemon
-        
+        self.favoriteStatus = pokemon.favoriteStatus
         self.pokeTitleLabel.text = (pokemon.name)?.firstCapitalized
         self.pokeDescriptionLabel.text = pokemon.description
        
@@ -46,6 +58,7 @@ class PokemonCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func favoriteButtonAction(_ sender: Any) {
+        favoriteStatus = !favoriteStatus
         self.pokemon?.favoriteAction?()
     }
     
@@ -69,11 +82,13 @@ class PokemonCollectionViewViewModel {
     var imageURL : String? = nil
     
     var favoriteAction: (()->())? = nil
+    var favoriteStatus = false
     
-    init(name : String?, description : String, imageURL : String?, favoriteAction: (()->())? = nil){
+    init(name : String?, description : String, imageURL : String?, favoriteAction: (()->())? = nil, favoriteStatus : Bool = false ){
         self.name = name
         self.description = description
         self.imageURL = imageURL
         self.favoriteAction = favoriteAction
+        self.favoriteStatus = favoriteStatus
     }
 }

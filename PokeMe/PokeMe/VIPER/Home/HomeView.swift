@@ -111,7 +111,9 @@ class HomeView: BaseView<HomePresenterProtocol>, UICollectionViewDelegate, UICol
                 descriptionText += " \("pokemon.cell.height.label".localized): \(height)"
             }
             
-            let viewModel = PokemonCollectionViewViewModel(name: pokemon.name, description: descriptionText, imageURL: pokemon.imageURL)
+            let viewModel = PokemonCollectionViewViewModel(name: pokemon.name, description: descriptionText, imageURL: pokemon.imageURL, favoriteAction: {
+                //TODO
+            })
             cell.setup(pokemon: viewModel)
         }
         
