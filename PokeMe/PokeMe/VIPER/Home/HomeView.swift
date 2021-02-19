@@ -55,7 +55,7 @@ class HomeView: BaseView<HomePresenterProtocol>, UICollectionViewDelegate, UICol
     
     func setupMenu(){
         self.menu.setup(historyButtonActionFunction: {
-            //TODO
+            self.presenter?.showFavoriteList()
         }, listButtonActionFunction: {
             //TODO
         }, pokeBallButtonActionFunction: {

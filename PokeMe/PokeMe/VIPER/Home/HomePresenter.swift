@@ -14,6 +14,7 @@ protocol HomePresenterProtocol: AnyObject {
     func homeViewDidLoad()
     func selectedPokemon(index: Int)
     func updateFavoriteStatus(index: Int, favoriteStatus: Bool)
+    func showFavoriteList()
     func cleanup()
 }
 
@@ -103,6 +104,9 @@ final class HomePresenter: BasePresenter<HomeView, HomeRouterProtocol, HomeInter
         })
     }
     
+    func showFavoriteList(){
+        self.router?.presentFavoriteList()
+    }
     
     func cleanup(){
         self.interactor?.cleanup()

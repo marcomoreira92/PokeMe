@@ -72,7 +72,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j58-fR-DPZ" customClass="InfoView" customModule="PokeMe" customModuleProvider="target">
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j58-fR-DPZ" customClass="InfoView" customModule="PokeMe" customModuleProvider="target">
                     <rect key="frame" x="77" y="303" width="260" height="260"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>

@@ -10,12 +10,19 @@ import Foundation
 import UIKit
 
 protocol HomeRouterProtocol: AnyObject {
-    func presentDetailView()
+    func presentPokemonDetailView()
+    func presentFavoriteList()
 }
 
 final class HomeRouter: BaseRouter<HomePresenterProtocol, HomeView>, HomeRouterProtocol {
 
-    internal func presentDetailView() {
+    func presentPokemonDetailView() {
         
     }
+    
+    func presentFavoriteList(){
+        let favoriteList = FavoriteListAssembly.favoriteListPresenterView()
+        self.present(favoriteList, animated: true)
+    }
+
 }
