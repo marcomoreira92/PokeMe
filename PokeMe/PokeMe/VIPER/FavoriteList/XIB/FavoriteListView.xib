@@ -1,25 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavoriteListView">
             <connections>
+                <outlet property="favoritesCollectionview" destination="Iec-40-upT" id="h35-jF-heb"/>
+                <outlet property="infoView" destination="j58-fR-DPZ" id="a3G-ee-9r9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="x4H-ry-a8n"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vr5-is-hT1">
+                    <rect key="frame" x="0.0" y="44" width="414" height="10"/>
+                    <color key="backgroundColor" name="color_primary"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="uEe-GX-J0K"/>
+                    </constraints>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poke_icon_background" translatesAutoresizingMaskIntoConstraints="NO" id="1UB-rb-CmZ">
+                    <rect key="frame" x="199" y="681" width="215" height="215"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="1UB-rb-CmZ" secondAttribute="height" multiplier="1:1" id="7Tx-rR-oQd"/>
+                        <constraint firstAttribute="height" constant="215" id="yen-95-Fua"/>
+                    </constraints>
+                </imageView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Iec-40-upT">
+                    <rect key="frame" x="0.0" y="54" width="414" height="842"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MnA-wp-GfK">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="teO-Xr-9QZ" customClass="ShadowView" customModule="PokeMe" customModuleProvider="target">
+                    <rect key="frame" x="20" y="64" width="50" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHk-Rk-BoF">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <color key="tintColor" name="color_primary_text"/>
+                            <state key="normal" image="multiply" catalog="system"/>
+                            <connections>
+                                <action selector="closeButtonAction:" destination="-1" eventType="touchUpInside" id="dJ9-jQ-1yf"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="teO-Xr-9QZ" secondAttribute="height" multiplier="1:1" id="C1B-Mm-ThK"/>
+                        <constraint firstItem="bHk-Rk-BoF" firstAttribute="leading" secondItem="teO-Xr-9QZ" secondAttribute="leading" id="WmC-tY-Q5D"/>
+                        <constraint firstAttribute="trailing" secondItem="bHk-Rk-BoF" secondAttribute="trailing" id="iAP-UT-VUH"/>
+                        <constraint firstAttribute="bottom" secondItem="bHk-Rk-BoF" secondAttribute="bottom" id="kns-6A-6pl"/>
+                        <constraint firstItem="bHk-Rk-BoF" firstAttribute="top" secondItem="teO-Xr-9QZ" secondAttribute="top" id="vb0-pj-DLI"/>
+                        <constraint firstAttribute="width" constant="50" id="xNQ-uL-RkA"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j58-fR-DPZ" customClass="InfoView" customModule="PokeMe" customModuleProvider="target">
+                    <rect key="frame" x="77" y="303" width="260" height="260"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="260" id="UKd-wf-jsy"/>
+                        <constraint firstAttribute="width" constant="260" id="cyP-jG-HeP"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="teO-Xr-9QZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="2ad-Fp-Cfp"/>
+                <constraint firstItem="teO-Xr-9QZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="4li-ov-7pA"/>
+                <constraint firstItem="Iec-40-upT" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="4m2-9U-He5"/>
+                <constraint firstItem="vr5-is-hT1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9oQ-VY-Dzw"/>
+                <constraint firstAttribute="trailing" secondItem="vr5-is-hT1" secondAttribute="trailing" id="AJ2-Wk-7YH"/>
+                <constraint firstItem="Iec-40-upT" firstAttribute="top" secondItem="vr5-is-hT1" secondAttribute="bottom" id="AKc-mY-eTW"/>
+                <constraint firstItem="j58-fR-DPZ" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Eh4-fL-W4F"/>
+                <constraint firstAttribute="bottom" secondItem="Iec-40-upT" secondAttribute="bottom" id="FRF-IY-MNb"/>
+                <constraint firstItem="Iec-40-upT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Jtb-Dq-EOB"/>
+                <constraint firstAttribute="bottom" secondItem="1UB-rb-CmZ" secondAttribute="bottom" id="fOl-op-gWr"/>
+                <constraint firstAttribute="trailing" secondItem="1UB-rb-CmZ" secondAttribute="trailing" id="hoC-1k-Mqm"/>
+                <constraint firstItem="vr5-is-hT1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="oSn-em-l8m"/>
+                <constraint firstItem="j58-fR-DPZ" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-20" id="t9H-Qa-acg"/>
+            </constraints>
+            <point key="canvasLocation" x="101.44927536231884" y="99.776785714285708"/>
         </view>
     </objects>
+    <resources>
+        <image name="multiply" catalog="system" width="128" height="111"/>
+        <image name="poke_icon_background" width="877" height="877"/>
+        <namedColor name="color_primary">
+            <color red="1" green="0.41960784313725491" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="color_primary_text">
+            <color red="0.25882352941176473" green="0.23137254901960785" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -12,6 +12,8 @@ import UIKit
 class FavoriteListView: BaseView<FavoriteListPresenterProtocol> {
 
     let screenName = "FavoriteList"
+    @IBOutlet weak var infoView: InfoView!
+    @IBOutlet weak var favoritesCollectionview: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,10 @@ class FavoriteListView: BaseView<FavoriteListPresenterProtocol> {
         
         self.presenter?.favoriteListViewDidLoad()
 
+    }
+    
+    @IBAction func closeButtonAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     deinit {
