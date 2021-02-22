@@ -42,5 +42,9 @@
 
 
 //Favorite list
-
 "favorite.list.title" = "Your Favorites";
+
+//About app
+"about.app.rigths" = "All Rights reserved. All Data and artwork is property of The Pokemon Company and is only used for demo purposes.";
+"about.app.version" = "Version";
+"about.app.developed.by" = "Developed by:";

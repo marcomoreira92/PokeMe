@@ -12,6 +12,11 @@ import UIKit
 class AppInfoView: BaseView<AppInfoPresenterProtocol> {
 
     let screenName = "AppInfo"
+    @IBOutlet weak var allRightsReservedLabel: UILabel!
+    @IBOutlet weak var appNameLabel: UILabel!
+    @IBOutlet weak var developedByLabel: UILabel!
+    @IBOutlet weak var developerNameLabel: UILabel!
+    @IBOutlet weak var appVersionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +25,10 @@ class AppInfoView: BaseView<AppInfoPresenterProtocol> {
         
         self.presenter?.appInfoViewDidLoad()
 
+    }
+    
+    @IBAction func closeButtonAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     deinit {
@@ -40,7 +49,13 @@ extension AppInfoView: BaseViewControllerRefresh {
     }
     
     func initializeUI() {
-        //TODO: implement all UI Setups
+        
+        let version: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+        let build: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
+        
+        self.allRightsReservedLabel.text = "about.app.rigths".localized
+        self.appVersionLabel.text = "\("about.app.version".localized) \(version) (\(build))"
+        self.developedByLabel.text = "about.app.developed.by".localized
 
     }
 }

@@ -11,6 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppInfoView">
             <connections>
+                <outlet property="allRightsReservedLabel" destination="BQO-8w-lJZ" id="FAm-t6-YhN"/>
+                <outlet property="appNameLabel" destination="EXJ-z6-wxw" id="pkZ-xj-GVu"/>
+                <outlet property="appVersionLabel" destination="DX1-2u-vV8" id="tbL-Xi-3kJ"/>
+                <outlet property="developedByLabel" destination="zfC-og-fMe" id="dlR-Ye-TrB"/>
+                <outlet property="developerNameLabel" destination="gfC-Rq-2tP" id="BXP-sj-rtj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="x4H-ry-a8n"/>
             </connections>
         </placeholder>
@@ -68,7 +73,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0.0 (1)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DX1-2u-vV8">
                             <rect key="frame" x="20" y="136.5" width="260" height="18"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -100,9 +105,12 @@
                             <state key="normal" image="multiply" catalog="system">
                                 <color key="titleColor" name="color_primary_text"/>
                             </state>
+                            <connections>
+                                <action selector="closeButtonAction:" destination="-1" eventType="touchUpInside" id="JnZ-JQ-TBL"/>
+                            </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="45" id="5Hl-QI-2Fh"/>
                         <constraint firstItem="7X3-f4-WdG" firstAttribute="leading" secondItem="l3h-QW-hb0" secondAttribute="leading" id="Hrs-3A-h65"/>
@@ -111,6 +119,11 @@
                         <constraint firstItem="7X3-f4-WdG" firstAttribute="top" secondItem="l3h-QW-hb0" secondAttribute="top" id="c1c-zV-JnL"/>
                         <constraint firstAttribute="trailing" secondItem="7X3-f4-WdG" secondAttribute="trailing" id="fbm-ju-D04"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="17"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -145,6 +158,9 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
