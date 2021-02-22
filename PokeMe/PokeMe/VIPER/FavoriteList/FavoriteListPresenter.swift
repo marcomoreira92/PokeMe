@@ -38,10 +38,28 @@ final class FavoriteListPresenter: BasePresenter<FavoriteListView, FavoriteListR
                     }
                     return
                 default:
+                    DispatchQueue.main.async {
+                        self.view?.infoView.setup(infoViewViewEnum: InfoViewViewEnum.internalError(buttonAction: {
+                            self.view?.refresh()
+                        }))
+                        self.view?.displayInfoView()
+                    }
                     return
                 }
             }
-            //TODO: update view
+            
+            if let model = favoriteListInteractorModel {
+                //TODO: update view 
+                return
+            }
+            
+            //default error in case there is no error or interactor model
+            DispatchQueue.main.async {
+                self.view?.infoView.setup(infoViewViewEnum: InfoViewViewEnum.internalError(buttonAction: {
+                    self.view?.refresh()
+                }))
+                self.view?.displayInfoView()
+            }
         })
         
     }
