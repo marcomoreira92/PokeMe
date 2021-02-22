@@ -1,6 +1,6 @@
 import Foundation
 import UIKit
-//import NVActivityIndicatorView
+import NVActivityIndicatorView
 
 //Base protocol
 protocol BaseViewControllerRefresh {
@@ -8,9 +8,8 @@ protocol BaseViewControllerRefresh {
 }
 
 //Base Clasees
-class BaseViewController: UIViewController{
+class BaseViewController: UIViewController, NVActivityIndicatorViewable{
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -21,11 +20,10 @@ class BaseViewController: UIViewController{
     override func didReceiveMemoryWarning() { super.didReceiveMemoryWarning() }
     
     func showLoader() {
-        //TODO
-    }
+        self.startAnimating(CGSize(width: 50, height: 50), message: "", type: NVActivityIndicatorType.ballClipRotatePulse)    }
     
     func hideLoader() {
-        // TODO
+        self.stopAnimating()
     }
     
     func showAlertWith(title: String, message: String, actions: NSArray?) {

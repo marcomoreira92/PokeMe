@@ -23,6 +23,7 @@ class HomeView: BaseView<HomePresenterProtocol>, UICollectionViewDelegate, UICol
         self.initializeUI()
         self.i18N()
         
+        self.showLoader()
         self.presenter?.homeViewDidLoad()
 
     }
@@ -150,6 +151,7 @@ class HomeView: BaseView<HomePresenterProtocol>, UICollectionViewDelegate, UICol
 // MARK: Extensions declaration of all extension and implementations of protocols 
 extension HomeView: BaseViewControllerRefresh {
     func refresh() {
+        self.showLoader()
         self.presenter?.homeViewDidLoad()
     }
     

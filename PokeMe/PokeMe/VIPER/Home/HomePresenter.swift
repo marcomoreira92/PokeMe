@@ -29,6 +29,7 @@ final class HomePresenter: BasePresenter<HomeView, HomeRouterProtocol, HomeInter
             if let homeInteractorModel = homeInteractorModel{
                 DispatchQueue.main.async {
                     self.viewModel = HomeViewModel(homeInteractorModel: homeInteractorModel)
+                    self.view?.hideLoader()
                     self.view?.homeCollectionView.reloadData()
                     self.view?.displayCollectionView()
                 }
@@ -43,6 +44,7 @@ final class HomePresenter: BasePresenter<HomeView, HomeRouterProtocol, HomeInter
                         self.view?.infoView.setup(infoViewViewEnum: InfoViewViewEnum.internalError(buttonAction: {
                             self.view?.refresh()
                         }))
+                        self.view?.hideLoader()
                         self.view?.displayInfoView()
                     }
                     break
@@ -52,6 +54,7 @@ final class HomePresenter: BasePresenter<HomeView, HomeRouterProtocol, HomeInter
                         self.view?.infoView.setup(infoViewViewEnum: InfoViewViewEnum.noInternetError(buttonAction: {
                             self.view?.refresh()
                         }))
+                        self.view?.hideLoader()
                         self.view?.displayInfoView()
                     }
                     break
@@ -62,6 +65,7 @@ final class HomePresenter: BasePresenter<HomeView, HomeRouterProtocol, HomeInter
                         self.view?.infoView.setup(infoViewViewEnum: InfoViewViewEnum.internalError(buttonAction: {
                             self.view?.refresh()
                         }))
+                        self.view?.hideLoader()
                         self.view?.displayInfoView()
                     }
                     break
@@ -77,6 +81,7 @@ final class HomePresenter: BasePresenter<HomeView, HomeRouterProtocol, HomeInter
                 self.view?.infoView.setup(infoViewViewEnum: InfoViewViewEnum.internalError(buttonAction: {
                     self.view?.refresh()
                 }))
+                self.view?.hideLoader()
                 self.view?.displayInfoView()
             }
             return
