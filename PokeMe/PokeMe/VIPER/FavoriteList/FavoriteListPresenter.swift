@@ -24,11 +24,19 @@ final class FavoriteListPresenter: BasePresenter<FavoriteListView, FavoriteListR
             if let error = error {
                 switch error {
                 case .noFavorites:
-                    "noFavorites".errorLog()
                     DispatchQueue.main.async {
                         self.view?.infoView.setup(infoViewViewEnum: InfoViewViewEnum.noFavorites)
                         self.view?.displayInfoView()
                     }
+                    return
+                case .networkError:
+                    DispatchQueue.main.async {
+                        self.view?.infoView.setup(infoViewViewEnum: InfoViewViewEnum.noInternetError(buttonAction: {
+                            self.view?.refresh()
+                        }))
+                        self.view?.displayInfoView()
+                    }
+                    return
                 default:
                     return
                 }

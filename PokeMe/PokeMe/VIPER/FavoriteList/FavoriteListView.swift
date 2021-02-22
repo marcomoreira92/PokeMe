@@ -45,7 +45,7 @@ class FavoriteListView: BaseView<FavoriteListPresenterProtocol> {
 // MARK: Extensions declaration of all extension and implementations of protocols 
 extension FavoriteListView: BaseViewControllerRefresh {
     func refresh() {
-        //TODO: implement all calls needed to refresh the UI
+        self.presenter?.favoriteListViewDidLoad()
     }
     
     func i18N() {
