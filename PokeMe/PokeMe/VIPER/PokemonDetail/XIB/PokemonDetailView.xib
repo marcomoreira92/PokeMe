@@ -39,10 +39,10 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUh-ae-6qn" customClass="ShadowView" customModule="PokeMe" customModuleProvider="target">
-                    <rect key="frame" x="25" y="69" width="50" height="50"/>
+                    <rect key="frame" x="310" y="69" width="45" height="45"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVC-S9-rFb">
-                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                             <color key="tintColor" name="color_primary_text"/>
                             <state key="normal" image="multiply" catalog="system"/>
                             <connections>
@@ -57,11 +57,11 @@
                         <constraint firstAttribute="bottom" secondItem="sVC-S9-rFb" secondAttribute="bottom" id="hvZ-hN-mlE"/>
                         <constraint firstItem="sVC-S9-rFb" firstAttribute="leading" secondItem="dUh-ae-6qn" secondAttribute="leading" id="lKI-LH-t4E"/>
                         <constraint firstItem="sVC-S9-rFb" firstAttribute="top" secondItem="dUh-ae-6qn" secondAttribute="top" id="rmr-Qo-xP6"/>
-                        <constraint firstAttribute="width" constant="50" id="xtL-Xq-imW"/>
+                        <constraint firstAttribute="width" constant="45" id="xtL-Xq-imW"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="20"/>
+                            <real key="value" value="17"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
@@ -80,7 +80,7 @@
                 <constraint firstItem="iue-IX-odw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="52g-tl-Bwa"/>
                 <constraint firstItem="0kK-RI-s0n" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="GLN-TO-2sK"/>
                 <constraint firstAttribute="trailing" secondItem="h3C-ae-HI3" secondAttribute="trailing" id="KYN-Dm-lg7"/>
-                <constraint firstItem="dUh-ae-6qn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="VTB-ZO-dOh"/>
+                <constraint firstItem="dUh-ae-6qn" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-20" id="VTB-ZO-dOh"/>
                 <constraint firstAttribute="bottom" secondItem="iue-IX-odw" secondAttribute="bottom" id="X1Q-OS-cJR"/>
                 <constraint firstAttribute="bottom" secondItem="h3C-ae-HI3" secondAttribute="bottom" id="XG3-mk-3s4"/>
                 <constraint firstItem="0kK-RI-s0n" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bJB-P2-MLA"/>

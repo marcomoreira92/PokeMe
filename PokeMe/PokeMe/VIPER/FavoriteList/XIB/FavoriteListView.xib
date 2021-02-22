@@ -35,21 +35,21 @@
                         <constraint firstAttribute="height" constant="215" id="yen-95-Fua"/>
                     </constraints>
                 </imageView>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Iec-40-upT">
+                <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Iec-40-upT">
                     <rect key="frame" x="0.0" y="54" width="414" height="842"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MnA-wp-GfK">
+                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MnA-wp-GfK">
                         <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="90" height="50"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="teO-Xr-9QZ" customClass="ShadowView" customModule="PokeMe" customModuleProvider="target">
-                    <rect key="frame" x="20" y="64" width="50" height="50"/>
+                    <rect key="frame" x="349" y="64" width="45" height="45"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHk-Rk-BoF">
-                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                             <color key="tintColor" name="color_primary_text"/>
                             <state key="normal" image="multiply" catalog="system"/>
                             <connections>
@@ -64,11 +64,11 @@
                         <constraint firstAttribute="trailing" secondItem="bHk-Rk-BoF" secondAttribute="trailing" id="iAP-UT-VUH"/>
                         <constraint firstAttribute="bottom" secondItem="bHk-Rk-BoF" secondAttribute="bottom" id="kns-6A-6pl"/>
                         <constraint firstItem="bHk-Rk-BoF" firstAttribute="top" secondItem="teO-Xr-9QZ" secondAttribute="top" id="vb0-pj-DLI"/>
-                        <constraint firstAttribute="width" constant="50" id="xNQ-uL-RkA"/>
+                        <constraint firstAttribute="width" constant="45" id="xNQ-uL-RkA"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="20"/>
+                            <real key="value" value="17"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
@@ -84,7 +84,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="teO-Xr-9QZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="2ad-Fp-Cfp"/>
+                <constraint firstItem="teO-Xr-9QZ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-20" id="2ad-Fp-Cfp"/>
                 <constraint firstItem="teO-Xr-9QZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="4li-ov-7pA"/>
                 <constraint firstItem="Iec-40-upT" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="4m2-9U-He5"/>
                 <constraint firstItem="vr5-is-hT1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9oQ-VY-Dzw"/>
