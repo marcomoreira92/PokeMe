@@ -48,6 +48,16 @@
 		6D3D1D9625E00C8E00131D94 /* FavoriteListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D1D8C25E00C8E00131D94 /* FavoriteListPresenter.swift */; };
 		6D3D1D9F25E3B83200131D94 /* FavoriteListCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D1D9D25E3B83200131D94 /* FavoriteListCollectionReusableView.swift */; };
 		6D3D1DA025E3B83200131D94 /* FavoriteListCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D3D1D9E25E3B83200131D94 /* FavoriteListCollectionReusableView.xib */; };
+		6D3D1DCA25E3FF4E00131D94 /* AppInfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D1DBE25E3FF4E00131D94 /* AppInfoDTO.swift */; };
+		6D3D1DCB25E3FF4E00131D94 /* AppInfoView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D3D1DC025E3FF4E00131D94 /* AppInfoView_iPad.xib */; };
+		6D3D1DCC25E3FF4E00131D94 /* AppInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D3D1DC125E3FF4E00131D94 /* AppInfoView.xib */; };
+		6D3D1DCD25E3FF4E00131D94 /* AppInfoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D1DC225E3FF4E00131D94 /* AppInfoInteractor.swift */; };
+		6D3D1DCE25E3FF4E00131D94 /* AppInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D1DC425E3FF4E00131D94 /* AppInfoViewModel.swift */; };
+		6D3D1DCF25E3FF4E00131D94 /* AppInfoInteractorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D1DC525E3FF4E00131D94 /* AppInfoInteractorModel.swift */; };
+		6D3D1DD025E3FF4E00131D94 /* AppInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D1DC625E3FF4E00131D94 /* AppInfoPresenter.swift */; };
+		6D3D1DD125E3FF4E00131D94 /* AppInfoAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D1DC725E3FF4E00131D94 /* AppInfoAssembly.swift */; };
+		6D3D1DD225E3FF4E00131D94 /* AppInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D1DC825E3FF4E00131D94 /* AppInfoView.swift */; };
+		6D3D1DD325E3FF4E00131D94 /* AppInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D1DC925E3FF4E00131D94 /* AppInfoRouter.swift */; };
 		6D41716525D6B8B400D2B8B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D41716425D6B8B400D2B8B2 /* AppDelegate.swift */; };
 		6D41716925D6B8B400D2B8B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D41716825D6B8B400D2B8B2 /* ViewController.swift */; };
 		6D41716C25D6B8B400D2B8B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D41716A25D6B8B400D2B8B2 /* Main.storyboard */; };
@@ -165,6 +175,16 @@
 		6D3D1D8C25E00C8E00131D94 /* FavoriteListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteListPresenter.swift; sourceTree = "<group>"; };
 		6D3D1D9D25E3B83200131D94 /* FavoriteListCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListCollectionReusableView.swift; sourceTree = "<group>"; };
 		6D3D1D9E25E3B83200131D94 /* FavoriteListCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteListCollectionReusableView.xib; sourceTree = "<group>"; };
+		6D3D1DBE25E3FF4E00131D94 /* AppInfoDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoDTO.swift; sourceTree = "<group>"; };
+		6D3D1DC025E3FF4E00131D94 /* AppInfoView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppInfoView_iPad.xib; sourceTree = "<group>"; };
+		6D3D1DC125E3FF4E00131D94 /* AppInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppInfoView.xib; sourceTree = "<group>"; };
+		6D3D1DC225E3FF4E00131D94 /* AppInfoInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoInteractor.swift; sourceTree = "<group>"; };
+		6D3D1DC425E3FF4E00131D94 /* AppInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoViewModel.swift; sourceTree = "<group>"; };
+		6D3D1DC525E3FF4E00131D94 /* AppInfoInteractorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoInteractorModel.swift; sourceTree = "<group>"; };
+		6D3D1DC625E3FF4E00131D94 /* AppInfoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoPresenter.swift; sourceTree = "<group>"; };
+		6D3D1DC725E3FF4E00131D94 /* AppInfoAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoAssembly.swift; sourceTree = "<group>"; };
+		6D3D1DC825E3FF4E00131D94 /* AppInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoView.swift; sourceTree = "<group>"; };
+		6D3D1DC925E3FF4E00131D94 /* AppInfoRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoRouter.swift; sourceTree = "<group>"; };
 		6D41716125D6B8B400D2B8B2 /* PokeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D41716425D6B8B400D2B8B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D41716825D6B8B400D2B8B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -380,6 +400,47 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		6D3D1DBC25E3FF4E00131D94 /* AppInfo */ = {
+			isa = PBXGroup;
+			children = (
+				6D3D1DBD25E3FF4E00131D94 /* DTO */,
+				6D3D1DBF25E3FF4E00131D94 /* XIB */,
+				6D3D1DC225E3FF4E00131D94 /* AppInfoInteractor.swift */,
+				6D3D1DC325E3FF4E00131D94 /* Models */,
+				6D3D1DC625E3FF4E00131D94 /* AppInfoPresenter.swift */,
+				6D3D1DC725E3FF4E00131D94 /* AppInfoAssembly.swift */,
+				6D3D1DC825E3FF4E00131D94 /* AppInfoView.swift */,
+				6D3D1DC925E3FF4E00131D94 /* AppInfoRouter.swift */,
+			);
+			path = AppInfo;
+			sourceTree = "<group>";
+		};
+		6D3D1DBD25E3FF4E00131D94 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				6D3D1DBE25E3FF4E00131D94 /* AppInfoDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		6D3D1DBF25E3FF4E00131D94 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				6D3D1DC025E3FF4E00131D94 /* AppInfoView_iPad.xib */,
+				6D3D1DC125E3FF4E00131D94 /* AppInfoView.xib */,
+			);
+			path = XIB;
+			sourceTree = "<group>";
+		};
+		6D3D1DC325E3FF4E00131D94 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6D3D1DC425E3FF4E00131D94 /* AppInfoViewModel.swift */,
+				6D3D1DC525E3FF4E00131D94 /* AppInfoInteractorModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		6D41715825D6B8B400D2B8B2 = {
 			isa = PBXGroup;
 			children = (
@@ -521,6 +582,7 @@
 		6D4171D825D6BB0000D2B8B2 /* VIPER */ = {
 			isa = PBXGroup;
 			children = (
+				6D3D1DBC25E3FF4E00131D94 /* AppInfo */,
 				6D3D1D7F25E00C8E00131D94 /* FavoriteList */,
 				6D3D1D1025DD51F400131D94 /* PokemonDetail */,
 				6D41720425D6BD4A00D2B8B2 /* Home */,
@@ -704,9 +766,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D3D1DCC25E3FF4E00131D94 /* AppInfoView.xib in Resources */,
 				6D3D1D5A25DE87C400131D94 /* HomeTutorialView.xib in Resources */,
 				6D3D1DA025E3B83200131D94 /* FavoriteListCollectionReusableView.xib in Resources */,
 				6D3D1D5525DE7F5E00131D94 /* HomeViewCollectionReusableHeaderView.xib in Resources */,
+				6D3D1DCB25E3FF4E00131D94 /* AppInfoView_iPad.xib in Resources */,
 				6D41717425D6B8B500D2B8B2 /* LaunchScreen.storyboard in Resources */,
 				6D41721425D6BD4A00D2B8B2 /* HomeView_iPad.xib in Resources */,
 				6D41721325D6BD4A00D2B8B2 /* HomeView.xib in Resources */,
@@ -866,6 +930,7 @@
 				6D4171F425D6BB0000D2B8B2 /* BaseRouter.swift in Sources */,
 				6D3D1D2725DD51F400131D94 /* PokemonDetailInteractorModel.swift in Sources */,
 				6D4171E125D6BB0000D2B8B2 /* UIImageView+Extension.swift in Sources */,
+				6D3D1DD125E3FF4E00131D94 /* AppInfoAssembly.swift in Sources */,
 				6D3D1D9F25E3B83200131D94 /* FavoriteListCollectionReusableView.swift in Sources */,
 				6D41721925D6BD4A00D2B8B2 /* HomeInteractorModel.swift in Sources */,
 				6D41724425DA775B00D2B8B2 /* PokemonCollectionViewCell.swift in Sources */,
@@ -873,10 +938,13 @@
 				6D4171F525D6BB0000D2B8B2 /* BaseView.swift in Sources */,
 				6D4171DA25D6BB0000D2B8B2 /* BaseCDL.swift in Sources */,
 				6D4171F125D6BB0000D2B8B2 /* BaseInteractor.swift in Sources */,
+				6D3D1DCF25E3FF4E00131D94 /* AppInfoInteractorModel.swift in Sources */,
 				6D3D1D4525DD6DE700131D94 /* PokemonStatTableViewCell.swift in Sources */,
 				6D3D1D6E25DECB7600131D94 /* CDLSavePokemonModel.swift in Sources */,
+				6D3D1DD325E3FF4E00131D94 /* AppInfoRouter.swift in Sources */,
 				6D4171ED25D6BB0000D2B8B2 /* String+Extension.swift in Sources */,
 				6D4171E425D6BB0000D2B8B2 /* Date+Extension.swift in Sources */,
+				6D3D1DCE25E3FF4E00131D94 /* AppInfoViewModel.swift in Sources */,
 				6D4171E825D6BB0000D2B8B2 /* UIImage+Extension.swift in Sources */,
 				6D41721625D6BD4A00D2B8B2 /* HomeInteractor.swift in Sources */,
 				6D4171DB25D6BB0000D2B8B2 /* CommonDataLayerEndPoints.swift in Sources */,
@@ -885,10 +953,13 @@
 				6D41721825D6BD4A00D2B8B2 /* HomeViewModel.swift in Sources */,
 				6D4171E925D6BB0000D2B8B2 /* UINavigationController+Extension.swift in Sources */,
 				6D4171DE25D6BB0000D2B8B2 /* PokeMeEnums.swift in Sources */,
+				6D3D1DD225E3FF4E00131D94 /* AppInfoView.swift in Sources */,
 				6D41721225D6BD4A00D2B8B2 /* HomeDTO.swift in Sources */,
 				6D4171F325D6BB0000D2B8B2 /* BasePresenter.swift in Sources */,
+				6D3D1DD025E3FF4E00131D94 /* AppInfoPresenter.swift in Sources */,
 				6D41721725D6BD4A00D2B8B2 /* HomeView.swift in Sources */,
 				6D3D1D1E25DD51F400131D94 /* PokemonDetailDTO.swift in Sources */,
+				6D3D1DCD25E3FF4E00131D94 /* AppInfoInteractor.swift in Sources */,
 				6D3D1D9325E00C8E00131D94 /* FavoriteListViewModel.swift in Sources */,
 				6D4171EE25D6BB0000D2B8B2 /* NSMutableAttributedString+Extension.swift in Sources */,
 				6D4171E625D6BB0000D2B8B2 /* NSObject+Extension.swift in Sources */,
@@ -898,6 +969,7 @@
 				6D3D1D2225DD51F400131D94 /* PokemonDetailView.swift in Sources */,
 				6D3D1D6425DEA41700131D94 /* UIColor+Extension.swift in Sources */,
 				6D3D1D1F25DD51F400131D94 /* PokemonDetailRouter.swift in Sources */,
+				6D3D1DCA25E3FF4E00131D94 /* AppInfoDTO.swift in Sources */,
 				6D41722325D6C4F500D2B8B2 /* Menu.swift in Sources */,
 				6D41721A25D6BD4A00D2B8B2 /* HomeRouter.swift in Sources */,
 				6D4171E725D6BB0000D2B8B2 /* UIView+Extension.swift in Sources */,

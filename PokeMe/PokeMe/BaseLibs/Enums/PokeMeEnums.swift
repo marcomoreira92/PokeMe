@@ -12,4 +12,5 @@ public enum XibFile: String {
     case homeView = "HomeView"
     case pokemonDetailView = "PokemonDetailView"
     case favoriteListView = "FavoriteListView"
+    case appInfoView = "AppInfoView"
 }

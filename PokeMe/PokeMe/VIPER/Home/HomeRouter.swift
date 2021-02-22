@@ -12,6 +12,7 @@ import UIKit
 protocol HomeRouterProtocol: AnyObject {
     func presentPokemonDetailView(dto: PokemonDetailDTO)
     func presentFavoriteList()
+    func presentAppInfo()
 }
 
 final class HomeRouter: BaseRouter<HomePresenterProtocol, HomeView>, HomeRouterProtocol {
@@ -24,6 +25,11 @@ final class HomeRouter: BaseRouter<HomePresenterProtocol, HomeView>, HomeRouterP
     func presentFavoriteList(){
         let favoriteList = FavoriteListAssembly.favoriteListPresenterView()
         self.present(favoriteList, animated: true)
+    }
+    
+    func presentAppInfo(){
+        let appInfo = AppInfoAssembly.appInfoPresenterView()
+        self.present(appInfo, animated: true)
     }
 
 }
