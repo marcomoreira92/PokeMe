@@ -57,7 +57,7 @@ class HomeView: BaseView<HomePresenterProtocol>, UICollectionViewDelegate, UICol
     func setupMenu(){
         self.menu.setup(favoritesButtonActionFunction: {
             self.presenter?.showFavoriteList()
-        }, listButtonActionFunction: {
+        }, aboutAppButtonActionFunction: {
             self.presenter?.showAppInfo()
         }, pokeBallButtonActionFunction: {
             self.refresh()

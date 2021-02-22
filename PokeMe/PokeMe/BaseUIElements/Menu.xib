@@ -10,8 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Menu" customModule="PokeMe" customModuleProvider="target">
             <connections>
+                <outlet property="aboutAppButton" destination="chn-C9-gFt" id="wKr-L5-TV5"/>
                 <outlet property="favoriteButton" destination="Rwn-pF-Jkn" id="hMC-CK-obe"/>
-                <outlet property="listButton" destination="chn-C9-gFt" id="wKr-L5-TV5"/>
                 <outlet property="menuContainerView" destination="11i-v1-I6w" id="bPI-qa-DXR"/>
                 <outlet property="pokeBallButton" destination="tRF-cH-Pnw" id="jTf-fn-u7o"/>
                 <outlet property="view" destination="iN0-l3-epB" id="sjj-ZA-9Mt"/>
@@ -46,11 +46,11 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <color key="tintColor" name="color_secondary"/>
-                            <state key="normal" image="list.bullet" catalog="system">
+                            <state key="normal" image="questionmark.square.dashed" catalog="system">
                                 <color key="titleColor" name="color_secondary"/>
                             </state>
                             <connections>
-                                <action selector="listButtonAction:" destination="-1" eventType="touchUpInside" id="Xef-yo-vbf"/>
+                                <action selector="aboutAppButtonAction:" destination="-1" eventType="touchUpInside" id="Xef-yo-vbf"/>
                             </connections>
                         </button>
                     </subviews>
@@ -98,8 +98,8 @@
     </objects>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
-        <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="poke_icon" width="1275" height="1280"/>
+        <image name="questionmark.square.dashed" catalog="system" width="128" height="114"/>
         <namedColor name="color_secondary">
             <color red="0.5490196078431373" green="0.3843137254901961" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

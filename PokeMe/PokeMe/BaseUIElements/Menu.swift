@@ -13,13 +13,13 @@ class Menu: UIView {
     @IBOutlet weak var menuContainerView: UIView!
     
     @IBOutlet weak var favoriteButton: UIButton!
-    @IBOutlet weak var listButton: UIButton!
+    @IBOutlet weak var aboutAppButton: UIButton!
     @IBOutlet weak var pokeBallButton: UIButton!
     
     let nibName = "Menu"
     
     var favoritesButtonActionFunction: (()->())? = nil
-    var listButtonActionFunction: (()->())? = nil
+    var aboutAppButtonActionFunction: (()->())? = nil
     var pokeBallButtonActionFunction: (()->())? = nil
     
     required init?(coder aDecoder: NSCoder) {
@@ -54,11 +54,11 @@ class Menu: UIView {
         }
     }
     
-    @IBAction func listButtonAction(_ sender: Any) {
-        if let listAction = self.listButtonActionFunction {
-            listAction()
+    @IBAction func aboutAppButtonAction(_ sender: Any) {
+        if let aboutAppAction = self.aboutAppButtonActionFunction {
+            aboutAppAction()
         }else{
-            "listButtonActionFunction function is not set. use Setup funtion to initiazile component".errorLog()
+            "aboutAppButtonActionFunction function is not set. use Setup funtion to initiazile component".errorLog()
         }
     }
     
@@ -75,9 +75,9 @@ class Menu: UIView {
         menuContainerView.layer.shadowRadius = 22
     }
     
-    func setup(favoritesButtonActionFunction: @escaping()->(), listButtonActionFunction: @escaping()->(), pokeBallButtonActionFunction: @escaping()->()){
+    func setup(favoritesButtonActionFunction: @escaping()->(), aboutAppButtonActionFunction: @escaping()->(), pokeBallButtonActionFunction: @escaping()->()){
         self.favoritesButtonActionFunction = favoritesButtonActionFunction
-        self.listButtonActionFunction = listButtonActionFunction
+        self.aboutAppButtonActionFunction = aboutAppButtonActionFunction
         self.pokeBallButtonActionFunction = pokeBallButtonActionFunction
     }
 
