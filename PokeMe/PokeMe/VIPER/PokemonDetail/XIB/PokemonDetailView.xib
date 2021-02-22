@@ -59,7 +59,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="sVC-S9-rFb" secondAttribute="trailing" id="DH8-lB-OQS"/>
                         <constraint firstAttribute="width" secondItem="dUh-ae-6qn" secondAttribute="height" multiplier="1:1" id="aQ5-Kl-2sl"/>
@@ -83,7 +83,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="dUh-ae-6qn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="0f7-ce-b5K"/>
                 <constraint firstItem="iue-IX-odw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="52g-tl-Bwa"/>
@@ -112,6 +112,9 @@
             <color red="0.25882352941176473" green="0.23137254901960785" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
