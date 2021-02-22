@@ -21,7 +21,6 @@ class FavoriteListView: BaseView<FavoriteListPresenterProtocol>, UICollectionVie
         self.i18N()
         
         self.presenter?.favoriteListViewDidLoad()
-
     }
     
     @IBAction func closeButtonAction(_ sender: Any) {
@@ -46,6 +45,7 @@ class FavoriteListView: BaseView<FavoriteListPresenterProtocol>, UICollectionVie
         self.favoritesCollectionview.dataSource = self
         self.favoritesCollectionview.delegate = self
         self.favoritesCollectionview.register(cellType: PokemonCollectionViewCell.self)
+        self.favoritesCollectionview.register(UINib(nibName: "FavoriteListCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier:"FavoriteListCollectionReusableView")
 
         if let collectionViewLayout = favoritesCollectionview.collectionViewLayout as? UICollectionViewFlowLayout {
             collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -90,6 +90,23 @@ class FavoriteListView: BaseView<FavoriteListPresenterProtocol>, UICollectionVie
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+
+       switch kind {
+       case UICollectionView.elementKindSectionHeader:
+           let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FavoriteListCollectionReusableView", for: indexPath) as! FavoriteListCollectionReusableView
+            headerView.setup()
+           return headerView
+
+       default:
+           assert(false, "Unexpected element kind")
+       }
+   }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: self.favoritesCollectionview.frame.width, height: 80)
     }
     
     deinit {

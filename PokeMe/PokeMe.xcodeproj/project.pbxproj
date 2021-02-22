@@ -46,6 +46,8 @@
 		6D3D1D9425E00C8E00131D94 /* FavoriteListInteractorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D1D8A25E00C8E00131D94 /* FavoriteListInteractorModel.swift */; };
 		6D3D1D9525E00C8E00131D94 /* FavoriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D1D8B25E00C8E00131D94 /* FavoriteListView.swift */; };
 		6D3D1D9625E00C8E00131D94 /* FavoriteListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D1D8C25E00C8E00131D94 /* FavoriteListPresenter.swift */; };
+		6D3D1D9F25E3B83200131D94 /* FavoriteListCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D1D9D25E3B83200131D94 /* FavoriteListCollectionReusableView.swift */; };
+		6D3D1DA025E3B83200131D94 /* FavoriteListCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D3D1D9E25E3B83200131D94 /* FavoriteListCollectionReusableView.xib */; };
 		6D41716525D6B8B400D2B8B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D41716425D6B8B400D2B8B2 /* AppDelegate.swift */; };
 		6D41716925D6B8B400D2B8B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D41716825D6B8B400D2B8B2 /* ViewController.swift */; };
 		6D41716C25D6B8B400D2B8B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D41716A25D6B8B400D2B8B2 /* Main.storyboard */; };
@@ -161,6 +163,8 @@
 		6D3D1D8A25E00C8E00131D94 /* FavoriteListInteractorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteListInteractorModel.swift; sourceTree = "<group>"; };
 		6D3D1D8B25E00C8E00131D94 /* FavoriteListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteListView.swift; sourceTree = "<group>"; };
 		6D3D1D8C25E00C8E00131D94 /* FavoriteListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteListPresenter.swift; sourceTree = "<group>"; };
+		6D3D1D9D25E3B83200131D94 /* FavoriteListCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListCollectionReusableView.swift; sourceTree = "<group>"; };
+		6D3D1D9E25E3B83200131D94 /* FavoriteListCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteListCollectionReusableView.xib; sourceTree = "<group>"; };
 		6D41716125D6B8B400D2B8B2 /* PokeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D41716425D6B8B400D2B8B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D41716825D6B8B400D2B8B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -361,6 +365,8 @@
 			children = (
 				6D3D1D8325E00C8E00131D94 /* FavoriteListView_iPad.xib */,
 				6D3D1D8425E00C8E00131D94 /* FavoriteListView.xib */,
+				6D3D1D9D25E3B83200131D94 /* FavoriteListCollectionReusableView.swift */,
+				6D3D1D9E25E3B83200131D94 /* FavoriteListCollectionReusableView.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -699,6 +705,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D3D1D5A25DE87C400131D94 /* HomeTutorialView.xib in Resources */,
+				6D3D1DA025E3B83200131D94 /* FavoriteListCollectionReusableView.xib in Resources */,
 				6D3D1D5525DE7F5E00131D94 /* HomeViewCollectionReusableHeaderView.xib in Resources */,
 				6D41717425D6B8B500D2B8B2 /* LaunchScreen.storyboard in Resources */,
 				6D41721425D6BD4A00D2B8B2 /* HomeView_iPad.xib in Resources */,
@@ -859,6 +866,7 @@
 				6D4171F425D6BB0000D2B8B2 /* BaseRouter.swift in Sources */,
 				6D3D1D2725DD51F400131D94 /* PokemonDetailInteractorModel.swift in Sources */,
 				6D4171E125D6BB0000D2B8B2 /* UIImageView+Extension.swift in Sources */,
+				6D3D1D9F25E3B83200131D94 /* FavoriteListCollectionReusableView.swift in Sources */,
 				6D41721925D6BD4A00D2B8B2 /* HomeInteractorModel.swift in Sources */,
 				6D41724425DA775B00D2B8B2 /* PokemonCollectionViewCell.swift in Sources */,
 				6D3D1D9425E00C8E00131D94 /* FavoriteListInteractorModel.swift in Sources */,

@@ -39,3 +39,8 @@
 "favorite.save.error.description"= "There was an issue and your pokemon couldn't be saved to your local favorite list";
 "favorite.delete.error.title"= "Favorite was not removed";
 "favorite.delete.error.description"= "There was an issue and your favorite pokemon couldn't be removed from your local favorite list";
+
+
+//Favorite list
+
+"favorite.list.title" = "Your Favorites";
