@@ -57,8 +57,13 @@ final class HomePresenter: BasePresenter<HomeView, HomeRouterProtocol, HomeInter
                     break
                     
                 case .noPokemonFound:
-                    //TODO
                     "no pokemon found".errorLog()
+                    DispatchQueue.main.async {
+                        self.view?.infoView.setup(infoViewViewEnum: InfoViewViewEnum.internalError(buttonAction: {
+                            self.view?.refresh()
+                        }))
+                        self.view?.displayInfoView()
+                    }
                     break
                 default:
                     break

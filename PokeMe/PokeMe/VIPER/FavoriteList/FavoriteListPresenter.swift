@@ -49,7 +49,12 @@ final class FavoriteListPresenter: BasePresenter<FavoriteListView, FavoriteListR
             }
             
             if let model = favoriteListInteractorModel {
-                //TODO: update view 
+                
+                DispatchQueue.main.async {
+                    self.viewModel = FavoriteListViewModel(favoriteListInteractorModel: model)
+                    self.view?.favoritesCollectionview.reloadData()
+                    self.view?.displayCollectionView()
+                }
                 return
             }
             
