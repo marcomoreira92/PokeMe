@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Menu" customModule="PokeMe" customModuleProvider="target">
             <connections>
-                <outlet property="historyButton" destination="Rwn-pF-Jkn" id="hMC-CK-obe"/>
+                <outlet property="favoriteButton" destination="Rwn-pF-Jkn" id="hMC-CK-obe"/>
                 <outlet property="listButton" destination="chn-C9-gFt" id="wKr-L5-TV5"/>
                 <outlet property="menuContainerView" destination="11i-v1-I6w" id="bPI-qa-DXR"/>
                 <outlet property="pokeBallButton" destination="tRF-cH-Pnw" id="jTf-fn-u7o"/>
@@ -31,11 +31,11 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <color key="tintColor" name="color_secondary"/>
-                            <state key="normal" image="clock.arrow.circlepath" catalog="system">
+                            <state key="normal" image="heart" catalog="system">
                                 <color key="titleColor" name="color_secondary"/>
                             </state>
                             <connections>
-                                <action selector="historyButtonAction:" destination="-1" eventType="touchUpInside" id="fCo-Ag-Df8"/>
+                                <action selector="favoritesButtonAction:" destination="-1" eventType="touchUpInside" id="fCo-Ag-Df8"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chn-C9-gFt">
@@ -96,7 +96,7 @@
         </view>
     </objects>
     <resources>
-        <image name="clock.arrow.circlepath" catalog="system" width="128" height="110"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="poke_icon" width="1275" height="1280"/>
         <namedColor name="color_secondary">

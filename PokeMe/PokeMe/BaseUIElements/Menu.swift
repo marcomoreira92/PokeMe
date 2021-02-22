@@ -12,13 +12,13 @@ class Menu: UIView {
     @IBOutlet var view: UIView!
     @IBOutlet weak var menuContainerView: UIView!
     
-    @IBOutlet weak var historyButton: UIButton!
+    @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var listButton: UIButton!
     @IBOutlet weak var pokeBallButton: UIButton!
     
     let nibName = "Menu"
     
-    var historyButtonActionFunction: (()->())? = nil
+    var favoritesButtonActionFunction: (()->())? = nil
     var listButtonActionFunction: (()->())? = nil
     var pokeBallButtonActionFunction: (()->())? = nil
     
@@ -38,11 +38,11 @@ class Menu: UIView {
         self.addSubview(view)
     }
     
-    @IBAction func historyButtonAction(_ sender: Any) {
-        if let historyAction = self.historyButtonActionFunction {
-            historyAction()
+    @IBAction func favoritesButtonAction(_ sender: Any) {
+        if let favoriteAction = self.favoritesButtonActionFunction {
+            favoriteAction()
         }else{
-            "historyButtonAction function is not set. use Setup funtion to initiazile component".errorLog()
+            "favoriteAction function is not set. use Setup funtion to initiazile component".errorLog()
         }
     }
     
@@ -75,8 +75,8 @@ class Menu: UIView {
         menuContainerView.layer.shadowRadius = 22
     }
     
-    func setup(historyButtonActionFunction: @escaping()->(), listButtonActionFunction: @escaping()->(), pokeBallButtonActionFunction: @escaping()->()){
-        self.historyButtonActionFunction = historyButtonActionFunction
+    func setup(favoritesButtonActionFunction: @escaping()->(), listButtonActionFunction: @escaping()->(), pokeBallButtonActionFunction: @escaping()->()){
+        self.favoritesButtonActionFunction = favoritesButtonActionFunction
         self.listButtonActionFunction = listButtonActionFunction
         self.pokeBallButtonActionFunction = pokeBallButtonActionFunction
     }
