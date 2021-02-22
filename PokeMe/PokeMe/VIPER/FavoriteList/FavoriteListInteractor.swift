@@ -14,6 +14,8 @@ protocol FavoriteListInteractorProtocol: AnyObject {
     var favoriteListDTO: FavoriteListDTO? {get set}
 
     func getFavoriteListData(completion: @escaping(_ favoriteListModelEntity : FavoriteListInteractorModel?, _ error: FavoriteListInteractorErrorModel?) -> Void)
+    func getPokemonID(index: Int, completion: @escaping(_ pokemonID : Int) -> Void)
+
     func cleanup()
 }
 
@@ -51,6 +53,16 @@ final class FavoriteListInteractor: BaseInteractor<FavoriteListPresenterProtocol
             }
         }))
     }
+    
+    func getPokemonID(index: Int, completion: @escaping(_ pokemonID : Int) -> Void){
+        if let pokemonID = self.favoriteListInteractorModel?.favoritePokemonList[index].id {
+            completion(pokemonID)
+        }else{
+            "No pokemon found".errorLog()
+            completion(-1)
+        }
+    }
+
     
     
     func cleanup(){

@@ -85,7 +85,7 @@ class FavoriteListView: BaseView<FavoriteListPresenterProtocol>, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //self.presenter?.selectedPokemon(index: indexPath.row)
+        self.presenter?.selectedPokemon(index: indexPath.row)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

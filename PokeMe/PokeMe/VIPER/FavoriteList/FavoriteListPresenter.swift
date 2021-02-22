@@ -12,6 +12,7 @@ import UIKit
 protocol FavoriteListPresenterProtocol: AnyObject {
     var viewModel: FavoriteListViewModel? { get set }
     func favoriteListViewDidLoad()
+    func selectedPokemon(index: Int)
     func cleanup()
 }
 
@@ -67,6 +68,15 @@ final class FavoriteListPresenter: BasePresenter<FavoriteListView, FavoriteListR
             }
         })
         
+    }
+    
+    func selectedPokemon(index: Int){
+        self.interactor?.getPokemonID(index: index, completion: {(_ id: Int) -> Void in
+            let pokemonDetailDTO = PokemonDetailDTO(id: id)
+            DispatchQueue.main.async {
+                self.router?.presentPokemonDetailView(dto: pokemonDetailDTO)
+            }
+        })
     }
     
     

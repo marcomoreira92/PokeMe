@@ -10,12 +10,13 @@ import Foundation
 import UIKit
 
 protocol FavoriteListRouterProtocol: AnyObject {
-    func presentDetailView()
+    func presentPokemonDetailView(dto: PokemonDetailDTO)
 }
 
 final class FavoriteListRouter: BaseRouter<FavoriteListPresenterProtocol, FavoriteListView>, FavoriteListRouterProtocol {
 
-    internal func presentDetailView() {
-        
+    func presentPokemonDetailView(dto: PokemonDetailDTO) {
+        let pokemonDetail = PokemonDetailAssembly.pokemonDetailPresenterView(pokemonDetailDTO: dto)
+        self.present(pokemonDetail, animated: true)
     }
 }
