@@ -69,6 +69,8 @@ enum FavoriteListInteractorErrorModel {
         switch error {
         case .networkError(_):
             return .networkError
+        case .noDataError:
+            return .noFavorites
         default:
             break
         }

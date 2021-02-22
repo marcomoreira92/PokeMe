@@ -21,6 +21,18 @@ final class FavoriteListPresenter: BasePresenter<FavoriteListView, FavoriteListR
 
     func favoriteListViewDidLoad() {
         self.interactor?.getFavoriteListData(completion: { (_ favoriteListInteractorModel:FavoriteListInteractorModel?, _ error : FavoriteListInteractorErrorModel?) -> Void in
+            if let error = error {
+                switch error {
+                case .noFavorites:
+                    "noFavorites".errorLog()
+                    DispatchQueue.main.async {
+                        self.view?.infoView.setup(infoViewViewEnum: InfoViewViewEnum.noFavorites)
+                        self.view?.displayInfoView()
+                    }
+                default:
+                    return
+                }
+            }
             //TODO: update view
         })
         

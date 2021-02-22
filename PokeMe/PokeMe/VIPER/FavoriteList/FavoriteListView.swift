@@ -28,6 +28,13 @@ class FavoriteListView: BaseView<FavoriteListPresenterProtocol> {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func displayInfoView(){
+        UIView.animate(withDuration: 0.3, animations: {
+            self.favoritesCollectionview.alpha = 0
+            self.infoView.alpha = 1
+        })
+    }
+    
     deinit {
         //clean all references
         self.presenter?.cleanup()
