@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PokemonDetailView">
             <connections>
                 <outlet property="closeButton" destination="sVC-S9-rFb" id="MBV-Ah-Jli"/>
+                <outlet property="infoView" destination="PzH-Vw-LrU" id="HIf-1j-fwL"/>
                 <outlet property="pokemonDetailCollectionview" destination="iue-IX-odw" id="OMf-ZR-6Hr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="x4H-ry-a8n"/>
             </connections>
@@ -28,6 +29,14 @@
                         <constraint firstAttribute="width" constant="215" id="zlI-QO-Jyt"/>
                     </constraints>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PzH-Vw-LrU" customClass="InfoView" customModule="PokeMe" customModuleProvider="target">
+                    <rect key="frame" x="57.666666666666657" y="261" width="260" height="260"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="260" id="6ju-oz-uW6"/>
+                        <constraint firstAttribute="width" secondItem="PzH-Vw-LrU" secondAttribute="height" multiplier="1:1" id="hZh-Vc-wsr"/>
+                    </constraints>
+                </view>
                 <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="iue-IX-odw">
                     <rect key="frame" x="0.0" y="10" width="375" height="802"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -80,6 +89,8 @@
                 <constraint firstItem="iue-IX-odw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="52g-tl-Bwa"/>
                 <constraint firstItem="0kK-RI-s0n" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="GLN-TO-2sK"/>
                 <constraint firstAttribute="trailing" secondItem="h3C-ae-HI3" secondAttribute="trailing" id="KYN-Dm-lg7"/>
+                <constraint firstItem="PzH-Vw-LrU" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Q5P-PY-YMa"/>
+                <constraint firstItem="PzH-Vw-LrU" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-20" id="Uap-P6-vVI"/>
                 <constraint firstItem="dUh-ae-6qn" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-20" id="VTB-ZO-dOh"/>
                 <constraint firstAttribute="bottom" secondItem="iue-IX-odw" secondAttribute="bottom" id="X1Q-OS-cJR"/>
                 <constraint firstAttribute="bottom" secondItem="h3C-ae-HI3" secondAttribute="bottom" id="XG3-mk-3s4"/>

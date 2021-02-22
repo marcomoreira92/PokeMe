@@ -28,7 +28,33 @@ final class PokemonDetailPresenter: BasePresenter<PokemonDetailView, PokemonDeta
                 }
                 return
             }
-            //TODO: handle errors
+            if let error = error {
+                switch error {
+                case .networkError:
+                    DispatchQueue.main.async {
+                        self.view?.infoView.setup(infoViewViewEnum: InfoViewViewEnum.noInternetError(buttonAction: {
+                            self.view?.refresh()
+                        }))
+                        self.view?.displayInfoView()
+                    }
+                    return
+                default:
+                    DispatchQueue.main.async {
+                        self.view?.infoView.setup(infoViewViewEnum: InfoViewViewEnum.internalError(buttonAction: {
+                            self.view?.refresh()
+                        }))
+                        self.view?.displayInfoView()
+                    }
+                    return
+                }
+            }
+            
+            DispatchQueue.main.async {
+                self.view?.infoView.setup(infoViewViewEnum: InfoViewViewEnum.internalError(buttonAction: {
+                    self.view?.refresh()
+                }))
+                self.view?.displayInfoView()
+            }
             
         })
         

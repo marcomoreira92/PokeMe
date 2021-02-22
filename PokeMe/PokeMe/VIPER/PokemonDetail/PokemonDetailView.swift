@@ -13,6 +13,7 @@ class PokemonDetailView: BaseView<PokemonDetailPresenterProtocol>, UICollectionV
 
     let screenName = "PokemonDetail"
     @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var infoView: InfoView!
     @IBOutlet weak var pokemonDetailCollectionview: UICollectionView!
     
     override func viewDidLoad() {
@@ -89,6 +90,20 @@ class PokemonDetailView: BaseView<PokemonDetailPresenterProtocol>, UICollectionV
         }
     }
     
+    func displayInfoView(){
+        UIView.animate(withDuration: 0.3, animations: {
+            self.pokemonDetailCollectionview.alpha = 0
+            self.infoView.alpha = 1
+        })
+    }
+    
+    func displayCollectionView(){
+        UIView.animate(withDuration: 0.3, animations: {
+            self.pokemonDetailCollectionview.alpha = 1
+            self.infoView.alpha = 0
+        })
+    }
+    
     
     deinit {
         //clean all references
@@ -109,6 +124,7 @@ extension PokemonDetailView: BaseViewControllerRefresh {
     
     func initializeUI() {
         setupCollectionView()
+        self.infoView.alpha = 0 
 
     }
 }
