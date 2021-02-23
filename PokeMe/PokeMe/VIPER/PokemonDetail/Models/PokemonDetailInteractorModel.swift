@@ -30,13 +30,15 @@ class PokemonDetailInteractorPokemonModel {
     var name : String?
     var height : Int?
     var imageURL: String?
-    
+    var weight : Int?
     var stats : [PokemonDetailInteractorPokemonStatsModel] = []
     
     init(cdlModel: CDLPokemonModel){
         self.id = cdlModel.id
         self.name = cdlModel.name
         self.height = cdlModel.height
+        self.weight = cdlModel.weight
+        
         if let sprites = cdlModel.sprites {
             if let sprite = sprites.other{
                 self.imageURL = sprite.officialartwork?.front_default

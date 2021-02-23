@@ -27,6 +27,7 @@ class PokemonDetailViewModelPokemonModel {
     var name : String?
     var height : Int?
     var imageURL: String?
+    var weight : Int?
     
     var stats : [PokemonDetailViewModelPokemonStatModel] = []
     
@@ -35,6 +36,8 @@ class PokemonDetailViewModelPokemonModel {
         self.height = model.height
         self.name = model.name
         self.imageURL = model.imageURL
+        self.weight = model.weight
+        
         for stat in model.stats{
             var base = "0"
             if let statBase = stat.base_stat{

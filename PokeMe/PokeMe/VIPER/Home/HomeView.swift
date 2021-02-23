@@ -106,12 +106,9 @@ class HomeView: BaseView<HomePresenterProtocol>, UICollectionViewDelegate, UICol
         if let pokemon = self.presenter?.viewModel?.pokemonModel {
             var descriptionText = ""
             if let id = pokemon.id{
-                descriptionText += "Pokémon \(id)"
+                descriptionText += "Pokémon: \(id)"
             }
-            if let height = pokemon.height{
-                descriptionText += " \("pokemon.cell.height.label".localized): \(height)"
-            }
-            
+
             let viewModel = PokemonCollectionViewViewModel(name: pokemon.name, description: descriptionText, imageURL: pokemon.imageURL, favoriteAction: { (status :Bool) -> Void in 
                 self.presenter?.updateFavoriteStatus(index: indexPath.row, favoriteStatus: status)
             })

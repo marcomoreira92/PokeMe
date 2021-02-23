@@ -47,10 +47,13 @@ class PokemonDetailView: BaseView<PokemonDetailPresenterProtocol>, UICollectionV
                 
                 var descriptionText = ""
                 if let id = pokemon.id{
-                    descriptionText += "Pokémon \(id)"
+                    descriptionText += "Pokémon: \(id)"
                 }
                 if let height = pokemon.height{
-                    descriptionText += " \("pokemon.cell.height.label".localized): \(height)"
+                    descriptionText += "\n\("pokemon.cell.height.label".localized): \(height)"
+                }
+                if let weight = pokemon.weight {
+                    descriptionText += " \("pokemon.cell.weight.label".localized): \(weight)"
                 }
                 
                 let viewModel = PokemonCollectionViewViewModel(name: pokemon.name, description: descriptionText, imageURL: pokemon.imageURL)

@@ -26,6 +26,8 @@
 
 //Pokemon cell
 "pokemon.cell.height.label" = "Height";
+"pokemon.cell.weight.label" = "Weight";
+
 
 //pokemon stat cell
 "pokemon.stat.base.label" = "Base";

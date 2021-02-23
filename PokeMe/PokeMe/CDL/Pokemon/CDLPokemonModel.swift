@@ -15,6 +15,7 @@ class CDLPokemonModel : CommonDataLayerBaseModel, Codable{
     var height : Int?
     var stats : [CDLStatsModel]?
     var sprites : CDLspritesModel?
+    var weight : Int?
     
     override init() {
         //TODO
@@ -27,6 +28,7 @@ class CDLPokemonModel : CommonDataLayerBaseModel, Codable{
         case height = "height"
         case stats = "stats"
         case sprites = "sprites"
+        case weight = "weight"
     }
     
 }

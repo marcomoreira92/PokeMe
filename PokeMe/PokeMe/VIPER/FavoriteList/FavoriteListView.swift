@@ -71,10 +71,7 @@ class FavoriteListView: BaseView<FavoriteListPresenterProtocol>, UICollectionVie
         if let pokemon = self.presenter?.viewModel?.pokemonList[indexPath.row]{
             var descriptionText = ""
             if let id = pokemon.id{
-                descriptionText += "Pokémon \(id)"
-            }
-            if let height = pokemon.height{
-                descriptionText += " \("pokemon.cell.height.label".localized): \(height)"
+                descriptionText += "Pokémon: \(id)"
             }
             
             let viewModel = PokemonCollectionViewViewModel(name: pokemon.name, description: descriptionText, imageURL: pokemon.imageURL)
