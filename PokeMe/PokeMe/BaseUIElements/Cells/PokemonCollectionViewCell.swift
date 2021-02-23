@@ -29,7 +29,7 @@ class PokemonCollectionViewCell: UICollectionViewCell {
 
             }else{
                 UIView.animate(withDuration: 0.3, animations: {
-                    self.favoriteContainerView.backgroundColor = UIColor.systemBackground
+                    self.favoriteContainerView.backgroundColor = UIColor.tertiarySystemBackground
                     self.favoriteButton.tintColor = UIColor(named: "color_primary_text")
                 })
             }

@@ -23,3 +23,4 @@ To help to instantiate each VIPER module we have a helper module called Assembly
 
 - To develop this app i used two pods: `SDWebImage` and `NVActivityIndicatorView` the use of them are free under the MIT licencing model.
 
+- To make all users happy this app was designed to be 100% darkmode compatible.

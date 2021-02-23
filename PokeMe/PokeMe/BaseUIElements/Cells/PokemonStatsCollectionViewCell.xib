@@ -76,10 +76,10 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eK5-DC-8JV" customClass="SelfSizedTableView" customModule="PokeMe" customModuleProvider="target">
                                 <rect key="frame" x="20" y="40" width="218" height="159"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="HoU-EX-oSQ" firstAttribute="leading" secondItem="lSe-m4-aJz" secondAttribute="leading" constant="20" id="Cg6-50-Icf"/>
                             <constraint firstItem="HoU-EX-oSQ" firstAttribute="top" secondItem="lSe-m4-aJz" secondAttribute="top" constant="20" id="KRm-aw-mqV"/>
@@ -115,7 +115,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
+        <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
