@@ -44,3 +44,6 @@ At the end i added some special features like the tutorial view, info view to ha
 - This app is currently not integrated with any Logging framework but all the steps were taken to make sure that the integration of a Loggin framework is as easy as possible. Instead of using the `print` funtion this app uses a String extension that can be replaced by the Logging framework. 
 
 - The webhook.site url used in this solution is: https://webhook.site/514d236a-c238-46bb-9091-3f511f7329de
+
+## App Video
+To see the app in action please [click here](./video)
