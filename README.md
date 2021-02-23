@@ -13,6 +13,8 @@ To help to instantiate each VIPER module we have a helper module called Assembly
 ## App Notes 
 - This app was designed to be prepared for localization in every language possible. To translate the app into a new language we only need to add a new `Localizable.String` file with all the new strings.
 
+- To help the user to find the refresh button (pokeball icon in the main screen) the app contains a Tutorial Callout that will appear after 3.5 seconds after the app launches and will disapear after the user uses the refresh function for the first time.
+
 - In case an endpoint changes this app was design to have a centralized endpoint list avaliable in the `CommonDataLayerEndpointBuilderEnum`.
 
 - This app contains some custom UI elements that can be used in other projects like the `InfoView` or the `menu`. Each UI element contains a specific view model that makes it independent and reusable in any app. To re-use it the developer only needs to instantiate the UI element and call the `setup` function. 
