@@ -15,6 +15,11 @@ The **P**resenter uses the **R**outer to navigate between modules.
 Each VIPER module contains a series of **E**ntities that have the function of storing the View Model and  Business Model. Besides these entities each module has a DTO (Data Transfer Object) that is designed to send data between each module.
 To help to instantiate each VIPER module we have a helper module called Assembly.
 
+## Approach
+To Develop this app I started by creating the base UI elements (view layer). After that i developed  the Data Layer, writting the tests as I developed every data/business layer function - Test Driven development.
+When all bussiness/data test pass I connected all layers to construct the entire module. 
+At the end i added some special features like the tutorial view, info view to handle error and other small details.
+
 ## App Notes 
 - This app was designed to be prepared for localization in every language possible. To translate the app into a new language we only need to add a new `Localizable.String` file with all the new strings.
 
