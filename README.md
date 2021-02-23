@@ -1,7 +1,7 @@
 # PokéMe
 
 ## Intro
-PokéMe is a small demo app that displays a random Pokémon that a user can add to its favorite list
+PokéMe is a small demo app that displays a random Pokémon that a user can add to his/her favorite list.
 
 ![App](./documentationImages/6.png)
 
@@ -13,14 +13,22 @@ To help to instantiate each VIPER module we have a helper module called Assembly
 ## App Notes 
 - This app was designed to be prepared for localization in every language possible. To translate the app into a new language we only need to add a new `Localizable.String` file with all the new strings.
 
-- To help the user to find the refresh button (pokeball icon in the main screen) the app contains a Tutorial Callout that will appear after 3.5 seconds after the app launches and will disapear after the user uses the refresh function for the first time.
+- To help the user find the refresh button (pokeball icon in the main screen) the app contains a Tutorial Callout that will appear after 3.5 seconds after the app launches and will disappear after the user uses the refresh function for the first time.
 
-- In case an endpoint changes this app was design to have a centralized endpoint list avaliable in the `CommonDataLayerEndpointBuilderEnum`.
+- In case an endpoint changes this app was designed to have a centralized endpoint list avaliable in the `CommonDataLayerEndpointBuilderEnum`.
 
 - This app contains some custom UI elements that can be used in other projects like the `InfoView` or the `menu`. Each UI element contains a specific view model that makes it independent and reusable in any app. To re-use it the developer only needs to instantiate the UI element and call the `setup` function. 
 
+- Even in the best apps sometimes there are issues/errors, thats why this app has a `InfoView` element that displays to the user information about possible issues like: no internet connection, api is down or even when there are no favorites selected.
+
 - This app uses a Common Data Layer (CDL) that is designed to be independent from each VIPER module. This approach makes it easier to test each Data module and makes it easier to share common data code between all VIPER modules.
 
-- To develop this app i used two pods: `SDWebImage` and `NVActivityIndicatorView` the use of them are free under the MIT licencing model.
+- To ensure quality this app contains a test target that will execute automatic tests of the most crucial parts of the app.
 
-- To make all users happy this app was designed to be 100% darkmode compatible.
+- To develop this app I used two pods: `SDWebImage` and `NVActivityIndicatorView`. The use of these is free under the MIT licencing model.
+
+- To make all users happy this app was designed to be 100% dark mode compatible.
+
+- To ensure this app is used by a bigger audience all screens are compatible not only in portrait mode but also in ladscape mode for iOS and iPadOS.
+
+- This app is currently not integrated with any Logging framework but all the steps were taken to make sure that the integration of a Loggin framework is as easy as possible. Instead of using the `print` funtion this app uses a String extension that can be replaced by the Logging framework. 
