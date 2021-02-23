@@ -3,7 +3,12 @@
 ## Intro
 PokéMe is a small demo app that displays a random Pokémon that a user can add to his/her favorite list.
 
+### App preview - Light Mode 
 ![App](./documentationImages/6.png)
+
+### App preview - Dark Mode 
+![App](./documentationImages/7.png)
+
 
 This app was built using VIPER Architecture where the **V**iew displays what it is told to by the **P**resenter that communicates with the **I**nteractor that contains all the business logic.
 The **P**resenter uses the **R**outer to navigate between modules. 
