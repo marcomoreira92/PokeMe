@@ -19,3 +19,5 @@ To help to instantiate each VIPER module we have a helper module called Assembly
 
 - This app uses a Common Data Layer (CDL) that is designed to be independent from each VIPER module. This approach makes it easier to test each Data module and makes it easier to share common data code between all VIPER modules.
 
+- To develop this app i used two pods: `SDWebImage` and `NVActivityIndicatorView` the use of them are free under the MIT licencing model.
+
